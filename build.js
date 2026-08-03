@@ -189,23 +189,24 @@ function renderSpotlight() {
     venue: c.venue,
     city: c.city,
     date: fmtDate(c.date),
-    photo: c.photo,
   }));
 
   return `
-  <section class="spotlight-section">
+  <section class="spotlight-section" id="spotlight-section" data-api-base="${escapeHtml(config.photosApiBase)}" style="display:none">
     <div class="wrap">
       <span class="eyebrow spotlight-eyebrow">Random Rewind</span>
-      <a class="spotlight-card" id="spotlight-card" href="#">
+      <div class="spotlight-card" id="spotlight-card" role="link" tabindex="0">
         <div class="spotlight-media">
           <img class="spotlight-img" id="spotlight-img" src="" alt="">
           <span class="spotlight-num" id="spotlight-num"></span>
+          <button type="button" class="spotlight-nav spotlight-prev" id="spotlight-prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="spotlight-nav spotlight-next" id="spotlight-next" aria-label="Next photo">&#8250;</button>
         </div>
         <div class="spotlight-caption">
           <div class="spotlight-band" id="spotlight-band"></div>
           <div class="spotlight-meta" id="spotlight-meta"></div>
         </div>
-      </a>
+      </div>
     </div>
   </section>
   <script>window.__ASHTON_SPOTLIGHT__ = ${JSON.stringify(spotlightData)};</script>`;

@@ -4,6 +4,8 @@
  * Public (no auth):
  * - GET  /api/concerts/:slug/photos   -> list photos for a show
  * - POST /api/concerts/:slug/photos   -> upload a photo (multipart: file, caption?)
+ * - GET  /api/all-photos              -> list every uploaded photo across all shows,
+ *                                        each tagged with its show's slug
  * - GET  /api/concerts/:slug/guests   -> list guests for a show, each with their
  *                                        running total of shows attended with Ashton
  * - POST /api/concerts/:slug/guests   -> add a name to a show's guest list (json: {name})
@@ -123,6 +125,31 @@ async function listPhotos(slug, env, cors) {
     uploadedAt: p.uploadedAt,
   }));
   return json({ photos: withUrls }, 200, cors);
+}
+
+async function listAllPhotos(env, cors) {
+  const photos = [];
+  let cursor;
+
+  do {
+    const listing = await env.PHOTOS_KV.list({ prefix: 'photos:', cursor });
+    for (const key of listing.keys) {
+      const slug = key.name.slice('photos:'.length);
+      const raw = await env.PHOTOS_KV.get(key.name);
+      const shown = raw ? JSON.parse(raw) : [];
+      for (const p of shown) {
+        photos.push({
+          slug,
+          src: `${env.MEDIA_BASE_URL}/${p.key}`,
+          caption: p.caption || '',
+          uploadedAt: p.uploadedAt,
+        });
+      }
+    }
+    cursor = listing.list_complete ? undefined : listing.cursor;
+  } while (cursor);
+
+  return json({ photos }, 200, cors);
 }
 
 async function uploadPhoto(slug, request, env, cors) {
@@ -495,6 +522,10 @@ export default {
 
     if (url.pathname === '/api/admin/storage-usage' && request.method === 'GET') {
       return storageUsage(request, env, cors);
+    }
+
+    if (url.pathname === '/api/all-photos' && request.method === 'GET') {
+      return listAllPhotos(env, cors);
     }
 
     const photosMatch = url.pathname.match(/^\/api\/concerts\/([^/]+)\/photos\/?$/);
