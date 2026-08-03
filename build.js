@@ -149,6 +149,7 @@ function page(title, description, prefix, bodyHtml, extraScripts) {
   ${extraScripts || ''}
   <script src="${prefix}assets/js/disco.js"></script>
   <script src="${prefix}assets/js/godmode.js"></script>
+  <script src="${prefix}assets/js/sleeper.js"></script>
 </body>
 </html>
 `;
