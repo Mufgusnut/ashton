@@ -46,6 +46,51 @@
     statusEl.classList.toggle('is-error', Boolean(isError));
   }
 
+  function setupLightbox() {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.innerHTML = `
+      <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+      <img class="lightbox-img" alt="">
+      <div class="lightbox-caption"></div>
+    `;
+    document.body.appendChild(overlay);
+
+    const imgEl = overlay.querySelector('.lightbox-img');
+    const captionEl = overlay.querySelector('.lightbox-caption');
+    const closeBtn = overlay.querySelector('.lightbox-close');
+
+    function openLightbox(src, caption) {
+      imgEl.src = src;
+      imgEl.alt = caption || 'Concert photo';
+      captionEl.textContent = caption || '';
+      captionEl.style.display = caption ? '' : 'none';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      imgEl.src = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
+    });
+
+    grid.addEventListener('click', (e) => {
+      const img = e.target.closest('.gallery-item img');
+      if (!img) return;
+      const caption = img.closest('.gallery-item').querySelector('figcaption');
+      openLightbox(img.src, caption ? caption.textContent : '');
+    });
+  }
+
   async function loadExistingPhotos() {
     try {
       const res = await fetch(`${apiBase}/api/concerts/${slug}/photos`);
@@ -115,6 +160,7 @@
     fileInput.value = '';
   });
 
+  setupLightbox();
   updateCount();
   loadExistingPhotos();
 })();
