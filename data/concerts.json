@@ -741,43 +741,43 @@
   },
   {
     "number": 20,
-    "slug": "railroad-earth-mahaiwe-great-barrington",
+    "slug": "railroad-earth-state-theatre-portland",
     "band": "Railroad Earth",
     "showTitle": "25th Anniversary Tour",
-    "venue": "Mahaiwe Performing Arts Center",
-    "city": "Great Barrington, MA",
-    "date": "2026-05-09",
-    "photo": "assets/img/concerts/railroad-earth-great-barrington.svg",
+    "venue": "State Theatre",
+    "city": "Portland, ME",
+    "date": "2026-05-08",
+    "photo": "assets/img/concerts/railroad-earth-portland.svg",
     "photos": [],
     "guestList": [],
     "setlist": {
       "set1": [
-        "Across the Great Divide",
-        "Running Wild Again",
-        "Colorado",
-        "Chains",
-        "Crossing the Gap",
-        "Farewell to Isinglass",
-        "Grandfather Mountain",
-        "Hard Livin'"
+        "Bird in a House",
+        "Saddle of the Sun",
+        "Chasin' a Rainbow",
+        "Mourning Flies",
+        "The Good Life",
+        "Black Bear",
+        "Maggie's Pancakes",
+        "Dandelion Wine"
       ],
       "set2": [
-        "Everything Keeps Changin'",
-        "Day on the Sand",
-        "For Love (Robert Earl Keen cover)",
-        "The Jupiter & the 119",
-        "My Favorite Spot",
-        "Just So You Know",
-        "Right in Tune",
-        "1759",
-        "Fisherman's Blues (The Waterboys cover)",
-        "Seven Story Mountain"
+        "Showers of Rain (Was That You?)",
+        "Where Songs Begin",
+        "Carrying Coal to Newcastle",
+        "Mighty River",
+        "Slippin' Away",
+        "The Forecast",
+        "Captain Nowhere",
+        "Elko",
+        "Keep Your Eyes Open",
+        "Long Way to Go"
       ],
       "encore": [
-        "Adding My Voice"
+        "Roadhouse Blues (The Doors cover)"
       ]
     },
-    "setlistSource": "https://www.setlist.fm/setlist/railroad-earth/2026/mahaiwe-performing-arts-center-great-barrington-ma-b74856a.html"
+    "setlistSource": "https://www.setlist.fm/setlist/railroad-earth/2026/state-theatre-portland-me-53751bb9.html"
   },
   {
     "number": 21,
