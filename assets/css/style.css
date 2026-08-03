@@ -1644,3 +1644,39 @@ details.freq-item[open] > summary.freq-row .freq-caret { transform: rotate(180de
   .disco-caption { width: 90vw; }
   .disco-ball { width: 64px; height: 64px; }
 }
+
+/* ---------------- God mode easter egg (iddqd) ---------------- */
+
+.godmode-active #site-content {
+  filter: invert(1) hue-rotate(85deg) saturate(2.4) brightness(0.45) contrast(1.35);
+}
+
+.godmode-toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  z-index: 10000;
+  max-width: 90vw;
+  transform: translateX(-50%) translateY(-16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  font-family: 'Courier New', ui-monospace, monospace;
+  font-weight: 700;
+  font-size: clamp(13px, 2.2vw, 18px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #39ff6a;
+  text-shadow: 0 0 10px rgba(57, 255, 106, 0.8);
+  background: rgba(3, 15, 5, 0.9);
+  border: 2px solid #39ff6a;
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  box-shadow: 0 0 26px rgba(57, 255, 106, 0.45);
+}
+
+.godmode-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
