@@ -6,5 +6,6 @@
   "challengeStart": "2025-09-07",
   "birthday": "2026-09-07",
   "domain": "ashton.cuzbro.net",
-  "socialImage": "assets/img/og-cover.svg"
+  "socialImage": "assets/img/og-cover.svg",
+  "photosApiBase": "https://ashton-api.cuzbro.net"
 }

@@ -17,7 +17,10 @@
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="../index.html">Ashton<span>40</span></a>
+      <a class="brand" href="../index.html">
+        <img class="brand-logo" src="../assets/img/branding/logo.png" alt="Ashton's 40 for 40 Tour">
+        <span class="brand-word">Ashton<span>40</span></span>
+      </a>
       <nav class="site-nav">
         <a href="../index.html">Home</a>
         <a href="../index.html#shows">All Shows</a>
@@ -62,6 +65,34 @@
   </section>
 
   
+
+  <section class="wrap gallery-section">
+    <div class="section-head">
+      <h2>Photos</h2>
+      <span class="sub" id="gallery-count"></span>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      
+    </div>
+    <div class="gallery-empty" id="gallery-empty" >
+      <div class="gallery-empty-icon">&#128247;</div>
+      <p>No photos yet. Be the first to drop one in below.</p>
+    </div>
+    <div class="dropzone" id="dropzone" data-slug="billy-strings-bethel-woods-night-two" data-api-base="https://ashton-api.cuzbro.net">
+      <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/gif" multiple hidden>
+      <div class="dropzone-content">
+        <div class="dropzone-icon">&#8593;</div>
+        <p><strong>Drag photos here</strong> or <button type="button" class="dropzone-browse">browse</button></p>
+        <p class="dropzone-hint">JPEG, PNG, WEBP, or GIF &middot; 8MB max</p>
+      </div>
+      <div class="dropzone-status" id="dropzone-status"></div>
+    </div>
+  </section>
+
+  <section class="wrap guest-list-section">
+    <div class="section-head"><h2>Guest List</h2></div>
+    <div class="guest-list-empty">Who came along for this one? Add names under <code>guestList</code> for this show in <code>data/concerts.json</code>.</div>
+  </section>
 
   <section class="wrap setlist-section">
     <div class="section-head">
@@ -120,6 +151,6 @@
       <span>7 of 40 shows logged</span>
     </div>
   </footer>
-  
+  <script src="../assets/js/gallery.js"></script>
 </body>
 </html>

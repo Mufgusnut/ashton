@@ -1,0 +1,19 @@
+name = "ashton-photos-api"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+routes = [
+  { pattern = "ashton-api.cuzbro.net", custom_domain = true }
+]
+
+[vars]
+ALLOWED_ORIGINS = "https://ashton.cuzbro.net,http://localhost:8787"
+MEDIA_BASE_URL = "https://ashton-media.cuzbro.net"
+
+[[r2_buckets]]
+binding = "PHOTOS_BUCKET"
+bucket_name = "ashton-40-photos"
+
+[[kv_namespaces]]
+binding = "PHOTOS_KV"
+id = "b2ab1b313530474badeb59b40fb318d6"

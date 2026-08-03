@@ -73,7 +73,10 @@ function head(title, description, prefix) {
 function header(prefix) {
   return `<header class="site-header">
     <div class="wrap">
-      <a class="brand" href="${prefix}index.html">${escapeHtml(config.personName)}<span>${goal}</span></a>
+      <a class="brand" href="${prefix}index.html">
+        <img class="brand-logo" src="${prefix}assets/img/branding/logo.png" alt="${escapeHtml(config.personName)}'s 40 for 40 Tour">
+        <span class="brand-word">${escapeHtml(config.personName)}<span>${goal}</span></span>
+      </a>
       <nav class="site-nav">
         <a href="${prefix}index.html">Home</a>
         <a href="${prefix}index.html#shows">All Shows</a>
@@ -146,9 +149,13 @@ function renderIndex() {
   const body = `
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">${escapeHtml(config.tagline)}</span>
-      <h1>${goal} SHOWS<br>BEFORE <span class="accent">${goal}</span></h1>
-      <p class="tagline">Follow ${escapeHtml(config.personName)}'s year-long chase to see ${goal} concerts before turning ${goal} &mdash; every show, every venue, every story along the way.</p>
+      <div class="hero-grid">
+        <img class="hero-logo" src="assets/img/branding/logo.png" alt="${escapeHtml(config.personName)}'s 40 for 40 Tour, ${fmtDate(config.challengeStart)} to ${fmtDate(config.birthday)}">
+        <div>
+          <span class="eyebrow">${escapeHtml(config.tagline)}</span>
+          <p class="tagline">Follow ${escapeHtml(config.personName)}'s year-long chase to see ${goal} concerts before turning ${goal} &mdash; every show, every venue, every story along the way.</p>
+        </div>
+      </div>
 
       <div class="hero-stats">
         <div class="stat-block">
@@ -237,6 +244,64 @@ function renderSetlist(concert) {
   </section>`;
 }
 
+function renderGallery(concert) {
+  const photos = concert.photos || [];
+
+  const items = photos.map((p) => {
+    const src = typeof p === 'string' ? `../${p}` : `../${p.src}`;
+    const caption = typeof p === 'string' ? '' : (p.caption || '');
+    return `<figure class="gallery-item">
+        <img src="${src}" alt="${escapeHtml(caption || concert.band)}" loading="lazy">
+        ${caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ''}
+      </figure>`;
+  }).join('\n      ');
+
+  return `<section class="wrap gallery-section">
+    <div class="section-head">
+      <h2>Photos</h2>
+      <span class="sub" id="gallery-count"></span>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      ${items}
+    </div>
+    <div class="gallery-empty" id="gallery-empty" ${photos.length ? 'style="display:none"' : ''}>
+      <div class="gallery-empty-icon">&#128247;</div>
+      <p>No photos yet. Be the first to drop one in below.</p>
+    </div>
+    <div class="dropzone" id="dropzone" data-slug="${escapeHtml(concert.slug)}" data-api-base="${escapeHtml(config.photosApiBase)}">
+      <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/gif" multiple hidden>
+      <div class="dropzone-content">
+        <div class="dropzone-icon">&#8593;</div>
+        <p><strong>Drag photos here</strong> or <button type="button" class="dropzone-browse">browse</button></p>
+        <p class="dropzone-hint">JPEG, PNG, WEBP, or GIF &middot; 8MB max</p>
+      </div>
+      <div class="dropzone-status" id="dropzone-status"></div>
+    </div>
+  </section>`;
+}
+
+function renderGuestList(concert) {
+  const guests = concert.guestList || [];
+  if (!guests.length) {
+    return `<section class="wrap guest-list-section">
+    <div class="section-head"><h2>Guest List</h2></div>
+    <div class="guest-list-empty">Who came along for this one? Add names under <code>guestList</code> for this show in <code>data/concerts.json</code>.</div>
+  </section>`;
+  }
+
+  const chips = guests.map((name) => `<span class="guest-chip">${escapeHtml(name)}</span>`).join('\n      ');
+
+  return `<section class="wrap guest-list-section">
+    <div class="section-head">
+      <h2>Guest List</h2>
+      <span class="sub">${guests.length} on the list</span>
+    </div>
+    <div class="guest-list">
+      ${chips}
+    </div>
+  </section>`;
+}
+
 function renderConcertPage(concert, prev, next) {
   const support = concert.supportActs && concert.supportActs.length
     ? concert.supportActs.join(', ')
@@ -281,6 +346,10 @@ function renderConcertPage(concert, prev, next) {
 
   ${concert.notes ? `<section class="wrap notes"><h2>Notes</h2><p>${escapeHtml(concert.notes)}</p></section>` : ''}
 
+  ${renderGallery(concert)}
+
+  ${renderGuestList(concert)}
+
   ${renderSetlist(concert)}
 
   <div class="wrap">
@@ -301,6 +370,7 @@ function renderConcertPage(concert, prev, next) {
     `${concert.band} at ${concert.venue}, ${concert.city} on ${fmtDate(concert.date)}.`,
     '../',
     body,
+    `<script src="../assets/js/gallery.js"></script>`,
   );
 }
 
