@@ -806,8 +806,8 @@ img { max-width: 100%; display: block; }
   background: var(--paper);
 }
 
-.freq-row:nth-child(even) { background: var(--paper-alt); }
-.freq-row:last-child { border-bottom: none; }
+.freq-stripe > .freq-row,
+.freq-row.freq-stripe { background: var(--paper-alt); }
 
 .freq-rank {
   font-family: 'Bungee', Arial, sans-serif;
@@ -815,9 +815,8 @@ img { max-width: 100%; display: block; }
   color: var(--ink-dim);
 }
 
-.freq-row:nth-child(1) .freq-rank { color: var(--yellow); text-shadow: 0 0 10px rgba(255, 229, 59, 0.5); }
-.freq-row:nth-child(2) .freq-rank,
-.freq-row:nth-child(3) .freq-rank { color: var(--cyan); }
+.freq-rank-1 .freq-rank { color: var(--yellow); text-shadow: 0 0 10px rgba(255, 229, 59, 0.5); }
+.freq-rank-23 .freq-rank { color: var(--cyan); }
 
 .freq-title {
   font-weight: 600;
@@ -836,6 +835,52 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
   white-space: nowrap;
 }
+
+/* expandable rows (songs played more than once) */
+
+summary.freq-row {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary.freq-row::-webkit-details-marker { display: none; }
+summary.freq-row::marker { content: ''; }
+
+summary.freq-row:hover { box-shadow: inset 3px 0 0 var(--pink); }
+
+.freq-caret {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.15s ease;
+}
+
+details.freq-item[open] > summary.freq-row .freq-caret { transform: rotate(180deg); }
+
+.freq-occurrences {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 20px 16px 76px;
+  background: var(--bg-deep);
+  border-bottom: 1px solid var(--line);
+}
+
+.freq-occurrence {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 13px;
+  transition: border-color 0.15s ease;
+}
+
+.freq-occurrence:hover { border-color: var(--cyan); }
+
+.freq-occ-band { color: var(--ink); font-weight: 600; }
+.freq-occ-date { color: var(--ink-dim); }
 
 @media (max-width: 640px) {
   .freq-row {
@@ -857,6 +902,10 @@ img { max-width: 100%; display: block; }
     padding: 2px 8px;
     margin-top: 2px;
   }
+
+  .freq-occurrences { padding: 10px 14px 14px; }
+
+  .freq-occurrence { flex-direction: column; gap: 2px; }
 }
 
 /* setlist */

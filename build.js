@@ -64,17 +64,22 @@ const setlistSongCount = (concert) => {
 const totalSongs = concerts.reduce((sum, c) => sum + setlistSongCount(c), 0);
 const progressPct = goal ? Math.round((totalShows / goal) * 100) : 0;
 
-const songCounts = new Map();
+const songOccurrences = new Map();
 concerts.forEach((c) => {
   if (!c.setlist) return;
   const { set1 = [], set2 = [], encore = [] } = c.setlist;
   [...set1, ...set2, ...encore].forEach((raw) => {
     const title = normalizeSongTitle(raw);
-    songCounts.set(title, (songCounts.get(title) || 0) + 1);
+    if (!songOccurrences.has(title)) songOccurrences.set(title, []);
+    songOccurrences.get(title).push({ band: c.band, date: c.date, slug: c.slug });
   });
 });
-const songFrequency = Array.from(songCounts.entries())
-  .map(([title, count]) => ({ title, count }))
+const songFrequency = Array.from(songOccurrences.entries())
+  .map(([title, occurrences]) => ({
+    title,
+    count: occurrences.length,
+    occurrences: occurrences.slice().sort((a, b) => a.date.localeCompare(b.date)),
+  }))
   .sort((a, b) => b.count - a.count || a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
 
 // ---------------------------------------------------------------------
@@ -239,12 +244,39 @@ function renderIndex() {
 // song frequency page
 // ---------------------------------------------------------------------
 
+function renderFreqRow({ title, count, occurrences }, rank) {
+  const rankClass = rank === 1 ? ' freq-rank-1' : (rank === 2 || rank === 3) ? ' freq-rank-23' : '';
+  const stripeClass = rank % 2 === 0 ? ' freq-stripe' : '';
+  const rankEl = `<div class="freq-rank">#${rank}</div>`;
+  const titleEl = `<div class="freq-title">${escapeHtml(title)}</div>`;
+
+  if (count <= 1) {
+    return `<div class="freq-row${rankClass}${stripeClass}">
+        ${rankEl}
+        ${titleEl}
+        <div class="freq-count">${count} play</div>
+      </div>`;
+  }
+
+  const occurrenceList = occurrences.map((o) => `<a class="freq-occurrence" href="concerts/${o.slug}.html">
+          <span class="freq-occ-band">${escapeHtml(o.band)}</span>
+          <span class="freq-occ-date">${fmtDate(o.date)}</span>
+        </a>`).join('\n        ');
+
+  return `<details class="freq-item${stripeClass}">
+      <summary class="freq-row${rankClass}">
+        ${rankEl}
+        ${titleEl}
+        <div class="freq-count">${count} plays <span class="freq-caret">&#9662;</span></div>
+      </summary>
+      <div class="freq-occurrences">
+        ${occurrenceList}
+      </div>
+    </details>`;
+}
+
 function renderSongFrequencyPage() {
-  const rows = songFrequency.map(({ title, count }, i) => `<div class="freq-row">
-        <div class="freq-rank">#${i + 1}</div>
-        <div class="freq-title">${escapeHtml(title)}</div>
-        <div class="freq-count">${count} play${count === 1 ? '' : 's'}</div>
-      </div>`).join('\n      ');
+  const rows = songFrequency.map((song, i) => renderFreqRow(song, i + 1)).join('\n      ');
 
   const body = `
   <section class="concert-hero">
