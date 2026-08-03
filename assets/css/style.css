@@ -266,11 +266,24 @@ img { max-width: 100%; display: block; }
 
 .stat-block .substat {
   margin-top: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stat-block .substat-num {
   font-family: 'Bungee', Arial, sans-serif;
   font-size: 36px;
   color: var(--yellow);
   line-height: 1;
   text-shadow: 0 0 12px rgba(255, 229, 59, 0.35);
+}
+
+.stat-block .substat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-dim);
 }
 
 /* progress bar */

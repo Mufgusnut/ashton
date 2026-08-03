@@ -248,7 +248,7 @@ function renderIndex() {
         <div class="stat-block">
           <div class="num">${cities.size}</div>
           <div class="label">Cities</div>
-          <div class="substat">${states.size} state${states.size === 1 ? '' : 's'}</div>
+          <div class="substat"><span class="substat-num">${states.size}</span> <span class="substat-label">state${states.size === 1 ? '' : 's'}</span></div>
         </div>
         <div class="stat-block">
           <div class="num">${totalSongs}</div>
