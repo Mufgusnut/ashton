@@ -1522,3 +1522,125 @@ details.freq-item[open] > summary.freq-row .freq-caret { transform: rotate(180de
 }
 
 .site-footer a { color: var(--cyan); }
+
+/* ---------------- Disco easter egg ---------------- */
+
+/* Filter is scoped to #site-content, not <body> — a filter on an
+   ancestor of a position:fixed element breaks its viewport-relative
+   fixed positioning, which would otherwise drag the overlay below. */
+.disco-active #site-content {
+  animation: disco-hue-cycle 1.4s linear infinite;
+}
+
+@keyframes disco-hue-cycle {
+  from { filter: hue-rotate(0deg) saturate(1.4); }
+  to { filter: hue-rotate(360deg) saturate(1.4); }
+}
+
+.disco-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.disco-beam {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 46vmax;
+  height: 140vmax;
+  transform-origin: top center;
+  background: linear-gradient(180deg, currentColor 0%, transparent 60%);
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  animation-name: disco-beam-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  clip-path: polygon(48% 0%, 52% 0%, 100% 100%, 0% 100%);
+}
+
+@keyframes disco-beam-spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+.disco-ball-swing {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: top center;
+  animation: disco-swing 2.4s ease-in-out infinite;
+}
+
+@keyframes disco-swing {
+  0%, 100% { transform: translateX(-50%) rotate(-6deg); }
+  50% { transform: translateX(-50%) rotate(6deg); }
+}
+
+.disco-string {
+  width: 2px;
+  height: 60px;
+  margin: 0 auto;
+  background: var(--line);
+}
+
+.disco-ball {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.85) 0deg 4deg, rgba(170, 170, 195, 0.55) 4deg 8deg),
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95), transparent 55%);
+  background-blend-mode: screen;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.55), 0 0 90px rgba(157, 78, 221, 0.45);
+  animation: disco-ball-spin 3s linear infinite;
+}
+
+@keyframes disco-ball-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.disco-sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.9);
+  animation-name: disco-twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes disco-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.disco-caption {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Bungee', Arial, sans-serif;
+  font-size: clamp(22px, 5vw, 48px);
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 12px var(--pink), 0 0 28px var(--cyan);
+  text-align: center;
+  animation: disco-caption-pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes disco-caption-pulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.08); }
+}
+
+@media (max-width: 640px) {
+  .disco-caption { width: 90vw; }
+  .disco-ball { width: 64px; height: 64px; }
+}

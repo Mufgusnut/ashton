@@ -141,10 +141,13 @@ function page(title, description, prefix, bodyHtml, extraScripts) {
   ${head(title, description, prefix)}
 </head>
 <body>
-  ${header(prefix)}
-  ${bodyHtml}
-  ${footer(prefix)}
+  <div id="site-content">
+    ${header(prefix)}
+    ${bodyHtml}
+    ${footer(prefix)}
+  </div>
   ${extraScripts || ''}
+  <script src="${prefix}assets/js/disco.js"></script>
 </body>
 </html>
 `;
