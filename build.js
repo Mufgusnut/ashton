@@ -238,6 +238,7 @@ function renderSetlist(concert) {
       <h2>Setlist</h2>
       ${concert.setlistSource ? `<span class="sub"><a href="${escapeHtml(concert.setlistSource)}" target="_blank" rel="noopener">via setlist.fm &nearr;</a></span>` : ''}
     </div>
+    ${concert.setlistNote ? `<p class="setlist-note">${escapeHtml(concert.setlistNote)}</p>` : ''}
     <div class="setlist-grid">
     ${columns}
     </div>

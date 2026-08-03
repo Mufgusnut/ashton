@@ -763,6 +763,16 @@ img { max-width: 100%; display: block; }
 
 .setlist-section { padding: 50px 0; border-top: 1px solid var(--line); }
 
+.setlist-note {
+  margin: -8px 0 26px;
+  padding: 10px 16px;
+  background: var(--paper);
+  border-left: 4px solid var(--yellow);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
 .setlist-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

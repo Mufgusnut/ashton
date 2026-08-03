@@ -1,6 +1,23 @@
 [
   {
     "number": 1,
+    "slug": "oteil-and-friends-waterville",
+    "band": "Oteil & Friends",
+    "venue": "Waterville Opera House",
+    "city": "Waterville, ME",
+    "date": "2025-10-01",
+    "photo": "assets/img/concerts/oteil-and-friends-waterville.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": ["Hillbillies on PCP (Steve Kimock cover)", "My Sisters and Brothers (In Christ) (The Sensational Nightingales cover)", "Way We Rise", "Sitting in Limbo (Jimmy Cliff cover)", "Hush", "Rubin and Cherise (Jerry Garcia Band cover)", "Mother's Song (John Kimock cover)", "That's What Love Will Make You Do (Little Milton cover)"],
+      "set2": ["Cats Under the Stars (Jerry Garcia Band cover)", "Love and War", "The Offing (unreleased)", "Run for the Roses (Jerry Garcia cover)", "Gambler's Conceit (Jason Crosby cover)", "Turn On Your Love Light (Bobby \"Blue\" Bland cover)", "Every Hungry Woman (The Allman Brothers Band cover)", "Standing on the Moon (Grateful Dead cover)", "Mighty High (Mighty Clouds of Joy cover)"],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/oteil-and-friends/2025/waterville-opera-house-waterville-me-3341e885.html"
+  },
+  {
+    "number": 2,
     "slug": "billy-strings-prudential-center-newark",
     "band": "Billy Strings",
     "venue": "Prudential Center",
@@ -17,7 +34,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/prudential-center-newark-nj-4b478f16.html"
   },
   {
-    "number": 2,
+    "number": 3,
     "slug": "bela-fleck-flecktones-portland",
     "band": "Béla Fleck and the Flecktones",
     "showTitle": "Jingle All the Way",
@@ -26,10 +43,17 @@
     "date": "2025-12-07",
     "photo": "assets/img/concerts/bela-fleck-portland.svg",
     "photos": [],
-    "guestList": []
+    "guestList": [],
+    "setlist": {
+      "set1": ["Next", "Silent Night (John Freeman Young cover)", "Sleigh Ride (Leroy Anderson & His Pops Orchestra cover, with Sierra Hull)", "Christmas Time Is Here (Vince Guaraldi Trio cover)", "Linus and Lucy (Vince Guaraldi Trio cover)", "Victor Wooten Solo", "Scratch & Sniff", "The Twelve Days of Christmas (traditional cover, with Sierra Hull)", "Jingle Bells (James Lord Pierpont cover, Béla & Ayan-ool duet)", "Jingle Bells (with Alash and Sierra Hull)"],
+      "set2": ["Sleeper", "Christmas Medley", "Chagytai (Alash cover, Alash Ensemble only)", "Ediski deg Boostaamny (Alash Ensemble cover)", "Béla Solo", "Have Yourself a Merry Little Christmas (Hugh Martin cover, with Abigail Washburn)", "What Child Is This / Dyngyldai (with Alash and Sierra Hull)", "Flight of the Cosmic Hippo (with Sierra Hull)", "I Want a Hippopotamus for Christmas (Gayla Peevey cover, with Sierra Hull)", "Stomping Grounds (with Sierra Hull)"],
+      "encore": ["Ah Sho Dekio (traditional cover, with Alash and Sierra Hull)", "Shanti (with Alash and Sierra Hull)"]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/bela-fleck-and-the-flecktones/2025/beacon-theatre-new-york-ny-3b42a0a4.html",
+    "setlistNote": "No setlist has been documented for this exact show. This is the setlist from the Beacon Theatre, NYC stop of the same Jingle All the Way tour on 12/10/2025 — a close approximation, not necessarily what was played in Portland."
   },
   {
-    "number": 3,
+    "number": 4,
     "slug": "goosemas-xii-night-one-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night One",
@@ -47,7 +71,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
   },
   {
-    "number": 4,
+    "number": 5,
     "slug": "goosemas-xii-night-two-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night Two",
@@ -65,7 +89,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
   },
   {
-    "number": 5,
+    "number": 6,
     "slug": "pigeons-playing-ping-pong-portland",
     "band": "Pigeons Playing Ping Pong",
     "venue": "State Theatre",
@@ -82,7 +106,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/pigeons-playing-ping-pong/2026/state-theatre-portland-me-7b4cd224.html"
   },
   {
-    "number": 6,
+    "number": 7,
     "slug": "eggy-3s-artspace-portsmouth",
     "band": "Eggy",
     "venue": "3S Artspace",
@@ -99,7 +123,7 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-may-14-2026-3s-artspace-portsmouth-nh-usa.html"
   },
   {
-    "number": 7,
+    "number": 8,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -116,7 +140,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 8,
+    "number": 9,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -134,7 +158,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 9,
+    "number": 10,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -152,7 +176,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 10,
+    "number": 11,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -170,7 +194,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 11,
+    "number": 12,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -188,7 +212,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 12,
+    "number": 13,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
