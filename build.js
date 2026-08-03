@@ -416,6 +416,17 @@ function renderGuestList(concert) {
   </section>`;
 }
 
+function renderMusicSet(concert) {
+  return `<section class="wrap music-set-section" id="music-set" data-slug="${escapeHtml(concert.slug)}" data-api-base="${escapeHtml(config.photosApiBase)}">
+    <div class="section-head">
+      <h2>Music Set</h2>
+      <span class="sub" id="set-count"></span>
+    </div>
+    <div class="set-list" id="set-list"></div>
+    <div class="set-empty" id="set-empty">No recording uploaded yet. Check back later.</div>
+  </section>`;
+}
+
 function renderConcertPage(concert, prev, next) {
   const support = concert.supportActs && concert.supportActs.length
     ? concert.supportActs.join(', ')
@@ -462,6 +473,8 @@ function renderConcertPage(concert, prev, next) {
 
   ${renderSetlist(concert)}
 
+  ${renderMusicSet(concert)}
+
   ${renderGuestList(concert)}
 
   ${renderGallery(concert)}
@@ -485,7 +498,83 @@ function renderConcertPage(concert, prev, next) {
     '../',
     body,
     `<script src="../assets/js/gallery.js"></script>
-    <script src="../assets/js/guestlist.js"></script>`,
+    <script src="../assets/js/guestlist.js"></script>
+    <script src="../assets/js/musicsets.js"></script>`,
+  );
+}
+
+// ---------------------------------------------------------------------
+// admin page
+// ---------------------------------------------------------------------
+
+function renderAdminPage() {
+  const manifest = concerts.map((c) => ({
+    slug: c.slug,
+    band: c.band,
+    showTitle: c.showTitle || '',
+    date: c.date,
+    number: c.number,
+  }));
+
+  const body = `
+  <section class="concert-hero">
+    <div class="wrap">
+      <div class="show-number">Admin</div>
+      <h1>Backstage</h1>
+      <p class="tagline">Upload music sets for each show &mdash; signed in with the same account as cuzbro.net.</p>
+    </div>
+  </section>
+
+  <section class="section" id="admin-app" data-api-base="${escapeHtml(config.photosApiBase)}">
+    <div class="wrap">
+      <div id="admin-login" class="admin-card">
+        <h2>Sign In</h2>
+        <form id="admin-login-form" class="admin-login-form">
+          <input type="email" id="admin-email" placeholder="Email" autocomplete="email" required>
+          <input type="password" id="admin-password" placeholder="Password" autocomplete="current-password" required>
+          <button type="submit">Sign In</button>
+        </form>
+        <p id="admin-login-status" class="admin-status"></p>
+      </div>
+
+      <div id="admin-panel" class="admin-panel" style="display:none">
+        <div class="admin-panel-head">
+          <div id="admin-whoami"></div>
+          <button type="button" id="admin-logout" class="admin-logout">Sign Out</button>
+        </div>
+
+        <div class="admin-storage-meter">
+          <div class="admin-storage-bar"><div class="admin-storage-bar-fill" id="admin-storage-fill"></div></div>
+          <div id="admin-storage-label" class="admin-storage-label">Loading storage usage...</div>
+        </div>
+
+        <div class="admin-show-picker">
+          <label for="admin-show-select">Show</label>
+          <select id="admin-show-select"></select>
+        </div>
+
+        <div id="admin-sets-list" class="admin-sets-list"></div>
+
+        <form id="admin-upload-form" class="admin-upload-form">
+          <input type="text" id="admin-set-label" placeholder="Label (e.g. Full Show, Set 1, Soundboard)" maxlength="120">
+          <input type="file" id="admin-set-file" accept="audio/*,.flac,.wav,.aiff,.wma,.m4a" required>
+          <button type="submit">Upload</button>
+        </form>
+        <div class="admin-upload-progress" id="admin-upload-progress" style="display:none">
+          <div class="admin-upload-progress-bar"><div class="admin-upload-progress-fill" id="admin-upload-progress-fill"></div></div>
+          <div id="admin-upload-status" class="admin-status"></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+
+  return page(
+    `Admin | ${config.siteName}`,
+    'Upload music sets for each show.',
+    '../',
+    body,
+    `<script>window.__ASHTON_CONCERTS__ = ${JSON.stringify(manifest)};</script>
+    <script type="module" src="../assets/js/admin.js"></script>`,
   );
 }
 
@@ -495,6 +584,10 @@ function renderConcertPage(concert, prev, next) {
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), renderIndex());
 fs.writeFileSync(path.join(ROOT, 'song-frequency.html'), renderSongFrequencyPage());
+
+const adminDir = path.join(ROOT, 'admin');
+if (!fs.existsSync(adminDir)) fs.mkdirSync(adminDir, { recursive: true });
+fs.writeFileSync(path.join(adminDir, 'index.html'), renderAdminPage());
 
 const concertsDir = path.join(ROOT, 'concerts');
 if (!fs.existsSync(concertsDir)) fs.mkdirSync(concertsDir, { recursive: true });

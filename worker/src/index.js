@@ -1,17 +1,32 @@
 /*
- * Photo + guest-list API for the "40 Before 40" concert site.
+ * Photo + guest-list + music-set API for the "40 Before 40" concert site.
+ *
+ * Public (no auth):
  * - GET  /api/concerts/:slug/photos   -> list photos for a show
  * - POST /api/concerts/:slug/photos   -> upload a photo (multipart: file, caption?)
  * - GET  /api/concerts/:slug/guests   -> list guests for a show, each with their
  *                                        running total of shows attended with Ashton
  * - POST /api/concerts/:slug/guests   -> add a name to a show's guest list (json: {name})
+ * - GET  /api/concerts/:slug/sets     -> list downloadable music sets for a show
+ *
+ * Admin only (Authorization: Bearer <Supabase access token>, same Supabase
+ * project as cuzbro.net; requires app_metadata.role === 'admin' or the
+ * shared guest@cuzbro.net account):
+ * - POST   /api/admin/concerts/:slug/sets/init      -> start a chunked upload
+ * - PUT    /api/admin/concerts/:slug/sets/part      -> upload one chunk
+ * - POST   /api/admin/concerts/:slug/sets/complete  -> finish the upload
+ * - POST   /api/admin/concerts/:slug/sets/abort     -> cancel an in-progress upload
+ * - DELETE /api/admin/concerts/:slug/sets           -> remove a set (json: {key})
+ * - GET    /api/admin/storage-usage                 -> total R2 bytes used
  *
  * Storage:
- * - R2: binary photo files, served publicly & directly at MEDIA_BASE_URL (not via this Worker).
+ * - R2: binary files, served publicly & directly at MEDIA_BASE_URL (not via this Worker).
+ *   Photos live under `concerts/{slug}/...`, music sets under `sets/{slug}/...`.
  * - KV `photos:{slug}`        -> JSON array of {key, caption, uploadedAt}
  * - KV `guests:{slug}`        -> JSON array of display names on that show's guest list
  * - KV `guesttotal:{normalized-name}` -> JSON {name, count} — count of distinct shows
  *   that person has been added to, across the whole site.
+ * - KV `sets:{slug}`          -> JSON array of {key, filename, label, sizeBytes, uploadedAt, uploadedBy}
  */
 
 const SLUG_RE = /^[a-z0-9-]{1,80}$/;
@@ -21,6 +36,7 @@ const MAX_GUESTS_PER_SHOW = 200;
 const MAX_NAME_LENGTH = 60;
 const UPLOAD_RATE_LIMIT_PER_HOUR = 20;
 const GUEST_RATE_LIMIT_PER_HOUR = 30;
+const GUEST_ADMIN_EMAIL = 'guest@cuzbro.net';
 
 const ALLOWED_TYPES = {
   'image/jpeg': 'jpg',
@@ -29,12 +45,14 @@ const ALLOWED_TYPES = {
   'image/gif': 'gif',
 };
 
+const ALLOWED_AUDIO_EXT = ['mp3', 'm4a', 'wav', 'flac', 'ogg', 'aac', 'wma', 'aiff'];
+
 function corsHeaders(request, env) {
   const allowed = env.ALLOWED_ORIGINS.split(',').map((s) => s.trim());
   const origin = request.headers.get('Origin');
   const headers = {
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Vary': 'Origin',
   };
   if (origin && allowed.includes(origin)) {
@@ -57,6 +75,35 @@ async function rateLimitOk(env, bucket, ip, limit) {
   if (current >= limit) return false;
   await env.PHOTOS_KV.put(key, String(current + 1), { expirationTtl: 3700 });
   return true;
+}
+
+function sanitizeFilename(name) {
+  const cleaned = String(name || 'set').replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 100);
+  return cleaned || 'set';
+}
+
+// ---------------------------------------------------------------------
+// admin auth — shared Supabase project with cuzbro.net
+// ---------------------------------------------------------------------
+
+async function verifyAdmin(request, env) {
+  const auth = request.headers.get('Authorization') || '';
+  const match = auth.match(/^Bearer\s+(.+)$/i);
+  if (!match) return null;
+
+  try {
+    const res = await fetch(`${env.SUPABASE_URL}/auth/v1/user`, {
+      headers: { Authorization: `Bearer ${match[1]}`, apikey: env.SUPABASE_ANON_KEY },
+    });
+    if (!res.ok) return null;
+    const user = await res.json();
+    const role = user.app_metadata && user.app_metadata.role;
+    const email = String(user.email || '').toLowerCase();
+    if (role === 'admin' || email === GUEST_ADMIN_EMAIL) return user;
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 // ---------------------------------------------------------------------
@@ -196,6 +243,194 @@ async function addGuest(slug, request, env, cors) {
 }
 
 // ---------------------------------------------------------------------
+// music sets (admin upload, public download)
+// ---------------------------------------------------------------------
+
+async function listSets(slug, env, cors) {
+  const raw = await env.PHOTOS_KV.get(`sets:${slug}`);
+  const sets = raw ? JSON.parse(raw) : [];
+  const withUrls = sets.map((s) => ({
+    key: s.key,
+    filename: s.filename,
+    label: s.label || '',
+    sizeBytes: s.sizeBytes || 0,
+    uploadedAt: s.uploadedAt,
+    url: `${env.MEDIA_BASE_URL}/${s.key}`,
+  }));
+  return json({ sets: withUrls }, 200, cors);
+}
+
+async function initSet(slug, request, env, cors) {
+  const user = await verifyAdmin(request, env);
+  if (!user) return json({ error: 'Unauthorized.' }, 401, cors);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Expected a JSON body.' }, 400, cors);
+  }
+
+  const filename = sanitizeFilename(body.filename);
+  const ext = (filename.split('.').pop() || '').toLowerCase();
+  if (!ALLOWED_AUDIO_EXT.includes(ext)) {
+    return json({ error: `Unsupported file type .${ext}. Allowed: ${ALLOWED_AUDIO_EXT.join(', ')}.` }, 415, cors);
+  }
+
+  const contentType = body.contentType || 'application/octet-stream';
+  const stamp = Date.now();
+  const rand = crypto.randomUUID().slice(0, 8);
+  const key = `sets/${slug}/${stamp}-${rand}-${filename}`;
+
+  const upload = await env.PHOTOS_BUCKET.createMultipartUpload(key, {
+    httpMetadata: { contentType },
+  });
+
+  return json({ key, uploadId: upload.uploadId }, 201, cors);
+}
+
+async function uploadSetPart(slug, request, env, cors, url) {
+  const user = await verifyAdmin(request, env);
+  if (!user) return json({ error: 'Unauthorized.' }, 401, cors);
+
+  const key = url.searchParams.get('key');
+  const uploadId = url.searchParams.get('uploadId');
+  const partNumber = parseInt(url.searchParams.get('partNumber') || '', 10);
+
+  if (!key || !uploadId || !partNumber) {
+    return json({ error: 'Missing key, uploadId, or partNumber.' }, 400, cors);
+  }
+  if (!key.startsWith(`sets/${slug}/`)) {
+    return json({ error: 'Key does not match this show.' }, 400, cors);
+  }
+
+  const buf = await request.arrayBuffer();
+  const upload = env.PHOTOS_BUCKET.resumeMultipartUpload(key, uploadId);
+  const part = await upload.uploadPart(partNumber, buf);
+
+  return json({ partNumber: part.partNumber, etag: part.etag }, 200, cors);
+}
+
+async function completeSet(slug, request, env, cors) {
+  const user = await verifyAdmin(request, env);
+  if (!user) return json({ error: 'Unauthorized.' }, 401, cors);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Expected a JSON body.' }, 400, cors);
+  }
+
+  const { key, uploadId, parts, filename, label, sizeBytes } = body;
+  if (!key || !uploadId || !Array.isArray(parts) || !parts.length) {
+    return json({ error: 'Missing key, uploadId, or parts.' }, 400, cors);
+  }
+  if (!key.startsWith(`sets/${slug}/`)) {
+    return json({ error: 'Key does not match this show.' }, 400, cors);
+  }
+
+  const upload = env.PHOTOS_BUCKET.resumeMultipartUpload(key, uploadId);
+  await upload.complete(parts);
+
+  const listKey = `sets:${slug}`;
+  const raw = await env.PHOTOS_KV.get(listKey);
+  const sets = raw ? JSON.parse(raw) : [];
+  const record = {
+    key,
+    filename: filename || key.split('/').pop(),
+    label: String(label || '').slice(0, 120),
+    sizeBytes: Number(sizeBytes) || 0,
+    uploadedAt: new Date().toISOString(),
+    uploadedBy: user.email || 'admin',
+  };
+  sets.push(record);
+  await env.PHOTOS_KV.put(listKey, JSON.stringify(sets));
+
+  return json({ set: { ...record, url: `${env.MEDIA_BASE_URL}/${key}` } }, 201, cors);
+}
+
+async function abortSet(slug, request, env, cors) {
+  const user = await verifyAdmin(request, env);
+  if (!user) return json({ error: 'Unauthorized.' }, 401, cors);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Expected a JSON body.' }, 400, cors);
+  }
+
+  const { key, uploadId } = body;
+  if (!key || !uploadId || !key.startsWith(`sets/${slug}/`)) {
+    return json({ error: 'Missing or invalid key/uploadId.' }, 400, cors);
+  }
+
+  try {
+    const upload = env.PHOTOS_BUCKET.resumeMultipartUpload(key, uploadId);
+    await upload.abort();
+  } catch {
+    // Already completed or aborted — treat as success.
+  }
+
+  return json({ ok: true }, 200, cors);
+}
+
+async function deleteSet(slug, request, env, cors) {
+  const user = await verifyAdmin(request, env);
+  if (!user) return json({ error: 'Unauthorized.' }, 401, cors);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Expected a JSON body.' }, 400, cors);
+  }
+
+  const key = body.key;
+  if (!key || !key.startsWith(`sets/${slug}/`)) {
+    return json({ error: 'Invalid key.' }, 400, cors);
+  }
+
+  await env.PHOTOS_BUCKET.delete(key);
+
+  const listKey = `sets:${slug}`;
+  const raw = await env.PHOTOS_KV.get(listKey);
+  const sets = raw ? JSON.parse(raw) : [];
+  await env.PHOTOS_KV.put(listKey, JSON.stringify(sets.filter((s) => s.key !== key)));
+
+  return json({ ok: true }, 200, cors);
+}
+
+// ---------------------------------------------------------------------
+// storage usage (admin only)
+// ---------------------------------------------------------------------
+
+async function storageUsage(request, env, cors) {
+  const user = await verifyAdmin(request, env);
+  if (!user) return json({ error: 'Unauthorized.' }, 401, cors);
+
+  let totalBytes = 0;
+  let objectCount = 0;
+  let photosBytes = 0;
+  let setsBytes = 0;
+  let cursor;
+
+  do {
+    const listing = await env.PHOTOS_BUCKET.list({ cursor, limit: 1000 });
+    for (const obj of listing.objects) {
+      totalBytes += obj.size;
+      objectCount += 1;
+      if (obj.key.startsWith('sets/')) setsBytes += obj.size;
+      else photosBytes += obj.size;
+    }
+    cursor = listing.truncated ? listing.cursor : undefined;
+  } while (cursor);
+
+  return json({ totalBytes, objectCount, photosBytes, setsBytes }, 200, cors);
+}
+
+// ---------------------------------------------------------------------
 // router
 // ---------------------------------------------------------------------
 
@@ -206,6 +441,10 @@ export default {
 
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: cors });
+    }
+
+    if (url.pathname === '/api/admin/storage-usage' && request.method === 'GET') {
+      return storageUsage(request, env, cors);
     }
 
     const photosMatch = url.pathname.match(/^\/api\/concerts\/([^/]+)\/photos\/?$/);
@@ -223,6 +462,33 @@ export default {
       if (!SLUG_RE.test(slug)) return json({ error: 'Invalid show identifier.' }, 400, cors);
       if (request.method === 'GET') return listGuests(slug, env, cors);
       if (request.method === 'POST') return addGuest(slug, request, env, cors);
+      return json({ error: 'Method not allowed.' }, 405, cors);
+    }
+
+    const setsMatch = url.pathname.match(/^\/api\/concerts\/([^/]+)\/sets\/?$/);
+    if (setsMatch) {
+      const slug = setsMatch[1];
+      if (!SLUG_RE.test(slug)) return json({ error: 'Invalid show identifier.' }, 400, cors);
+      if (request.method === 'GET') return listSets(slug, env, cors);
+      return json({ error: 'Method not allowed.' }, 405, cors);
+    }
+
+    const adminSetsMatch = url.pathname.match(/^\/api\/admin\/concerts\/([^/]+)\/sets\/(init|part|complete|abort)\/?$/);
+    if (adminSetsMatch) {
+      const [, slug, action] = adminSetsMatch;
+      if (!SLUG_RE.test(slug)) return json({ error: 'Invalid show identifier.' }, 400, cors);
+      if (action === 'init' && request.method === 'POST') return initSet(slug, request, env, cors);
+      if (action === 'part' && request.method === 'PUT') return uploadSetPart(slug, request, env, cors, url);
+      if (action === 'complete' && request.method === 'POST') return completeSet(slug, request, env, cors);
+      if (action === 'abort' && request.method === 'POST') return abortSet(slug, request, env, cors);
+      return json({ error: 'Method not allowed.' }, 405, cors);
+    }
+
+    const adminSetsDeleteMatch = url.pathname.match(/^\/api\/admin\/concerts\/([^/]+)\/sets\/?$/);
+    if (adminSetsDeleteMatch) {
+      const slug = adminSetsDeleteMatch[1];
+      if (!SLUG_RE.test(slug)) return json({ error: 'Invalid show identifier.' }, 400, cors);
+      if (request.method === 'DELETE') return deleteSet(slug, request, env, cors);
       return json({ error: 'Method not allowed.' }, 405, cors);
     }
 

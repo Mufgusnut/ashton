@@ -163,6 +163,47 @@ account that also manages `cuzbro.net`'s DNS — the R2 custom domain and
 the Worker's custom domain routes were both created against that same
 zone, so nothing else needs configuring on the DNS side for this feature.
 
+## Admin — music set uploads
+
+`ashton.cuzbro.net/admin` ("Backstage") is a login-gated page for uploading
+full-length show recordings, which then appear as downloads on that show's
+"Music Set" section for anyone to grab — no login needed to download, only
+to upload.
+
+Login is the **same account as cuzbro.net** — it authenticates against the
+same Supabase project (`supabase.js` client, same URL/anon key baked into
+`assets/js/admin.js`). Access is granted to anyone with
+`app_metadata.role === "admin"` on that Supabase project (Dave, Justin,
+Chappy) or the shared `guest@cuzbro.net` account — the same admin role
+cuzbro.net itself checks. There's no separate password to manage; adding or
+removing an admin means editing `auth.users` in the shared Supabase project
+(see `c:\cuzbro\supabase\guest-access-setup.sql` for how that's done), not
+anything in this repo.
+
+Because recordings can be large (hundreds of MB to a couple GB), uploads
+are chunked automatically: the browser splits the file into 40MB pieces
+and uploads each as a separate request using
+[R2's multipart upload API](https://developers.cloudflare.com/r2/objects/multipart-objects/)
+(`worker/src/index.js`'s `sets/init` → `sets/part` (× N) → `sets/complete`
+endpoints), so no single request ever needs to carry the whole file. The
+admin page also shows a running total of R2 storage used across the whole
+project (photos + sets), since R2's free tier is 10GB.
+
+Everything except downloading is auth-checked server-side in the Worker:
+each admin request carries `Authorization: Bearer <Supabase access token>`,
+and the Worker calls Supabase's `/auth/v1/user` endpoint to verify the
+token and check the role before touching R2/KV — a client-side check alone
+wouldn't be enough, since anyone can read the JS.
+
+To remove a set manually (bypassing the admin UI):
+
+```
+cd worker
+npx wrangler r2 object delete "ashton-40-photos/<key-from-the-set-url>" --remote
+npx wrangler kv key get "sets:<slug>" --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
+npx wrangler kv key put "sets:<slug>" '<edited JSON array>' --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
+```
+
 ## Deploying to GitHub Pages (ashton.cuzbro.net)
 
 Already set up: the site is pushed to

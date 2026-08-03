@@ -9,6 +9,8 @@ routes = [
 [vars]
 ALLOWED_ORIGINS = "https://ashton.cuzbro.net,http://localhost:8787"
 MEDIA_BASE_URL = "https://ashton-media.cuzbro.net"
+SUPABASE_URL = "https://qhvjhvxhvolywkxgdxxy.supabase.co"
+SUPABASE_ANON_KEY = "sb_publishable_wR3TvwVqO7QV6qmMaA4NDA_3do0BpIh"
 
 [[r2_buckets]]
 binding = "PHOTOS_BUCKET"
