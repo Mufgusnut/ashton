@@ -200,6 +200,49 @@
   },
   {
     "number": 6,
+    "slug": "the-pietasters-middle-east-cambridge",
+    "band": "The Pietasters",
+    "venue": "The Middle East Downstairs",
+    "city": "Cambridge, MA",
+    "date": "2025-10-18",
+    "photo": "assets/img/concerts/the-pietasters-cambridge.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": [
+      "The Raging Nathans",
+      "The Doped Up Dollies",
+      "The Kilograms"
+    ],
+    "setlist": {
+      "set1": [
+        "Glimmer (Joe Gittleman cover)",
+        "Rachel",
+        "Something Better",
+        "Biblical Sense",
+        "Nite Owl (Tony Allen cover)",
+        "Hypmotize",
+        "Ocean",
+        "Change My Ways",
+        "Can I Change My Mind (Tyrone Davis cover)",
+        "Little Engine (with Tal Bayer)",
+        "Moment",
+        "Don't Wanna Know",
+        "Maggie Mae",
+        "Movin' On Up",
+        "Freak Show",
+        "Out All Night",
+        "Girl Take It Easy",
+        "Wasted",
+        "Drinking and Driving (The Business cover)",
+        "Factory Concerto"
+      ],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/the-pietasters/2025/the-middle-east-restaurant-and-nightclub-downstairs-cambridge-ma-7b4e3a88.html"
+  },
+  {
+    "number": 7,
     "slug": "billy-strings-baltimore-halloween",
     "band": "Billy Strings",
     "showTitle": "Meet Me at the Crypt",
@@ -255,7 +298,7 @@
     "setlistNote": "Halloween-themed 'Meet Me at the Crypt' show with a rotating cast of guests throughout — Cory Henry, Alwyn Robinson, Cris Jacobs, and the Charm City Coven strings were on stage most of the night."
   },
   {
-    "number": 7,
+    "number": 8,
     "slug": "leftover-salmon-nevermore-hall-baltimore",
     "band": "Leftover Salmon",
     "venue": "Nevermore Hall",
@@ -272,7 +315,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/leftover-salmon/2025/nevermore-hall-baltimore-md-b4f85c2.html"
   },
   {
-    "number": 8,
+    "number": 9,
     "slug": "billy-strings-baltimore-night-two",
     "band": "Billy Strings",
     "venue": "CFG Bank Arena",
@@ -316,7 +359,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/cfg-bank-arena-baltimore-md-6b478eea.html"
   },
   {
-    "number": 9,
+    "number": 10,
     "slug": "billy-strings-prudential-center-newark",
     "band": "Billy Strings",
     "showTitle": "Newark, Night One",
@@ -363,7 +406,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/prudential-center-newark-nj-4b478f16.html"
   },
   {
-    "number": 10,
+    "number": 11,
     "slug": "billy-strings-prudential-center-newark-night-two",
     "band": "Billy Strings",
     "showTitle": "Newark, Night Two",
@@ -409,7 +452,7 @@
     "setlistNote": "Play a Train Song opened the show as a tribute to Todd Snider, who had died the day before."
   },
   {
-    "number": 11,
+    "number": 12,
     "slug": "bela-fleck-flecktones-portland",
     "band": "Béla Fleck and the Flecktones",
     "showTitle": "Jingle All the Way",
@@ -453,7 +496,7 @@
     "setlistNote": "No setlist has been documented for this exact show. This is the setlist from the Beacon Theatre, NYC stop of the same Jingle All the Way tour on 12/10/2025 — a close approximation, not necessarily what was played in Portland."
   },
   {
-    "number": 12,
+    "number": 13,
     "slug": "goosemas-xii-night-one-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night One",
@@ -491,7 +534,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
   },
   {
-    "number": 13,
+    "number": 14,
     "slug": "goosemas-xii-night-two-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night Two",
@@ -530,7 +573,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
   },
   {
-    "number": 14,
+    "number": 15,
     "slug": "eggy-state-theatre-portland",
     "band": "Eggy",
     "venue": "State Theatre",
@@ -557,7 +600,7 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-january-10-2026-state-theatre-portland-me-usa.html"
   },
   {
-    "number": 15,
+    "number": 16,
     "slug": "sound-tribe-sector-9-big-night-live-boston",
     "band": "Sound Tribe Sector 9",
     "showTitle": "Human Dream Tour 2026",
@@ -597,7 +640,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/sound-tribe-sector-9/2026/big-night-live-boston-ma-234fbc4f.html"
   },
   {
-    "number": 16,
+    "number": 17,
     "slug": "pigeons-playing-ping-pong-portland",
     "band": "Pigeons Playing Ping Pong",
     "venue": "State Theatre",
@@ -634,7 +677,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/pigeons-playing-ping-pong/2026/state-theatre-portland-me-7b4cd224.html"
   },
   {
-    "number": 17,
+    "number": 18,
     "slug": "spafford-the-sinclair-cambridge",
     "band": "Spafford",
     "showTitle": "Winter Tour 2026",
@@ -668,7 +711,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/spafford/2026/the-sinclair-cambridge-ma-1b4c61b4.html"
   },
   {
-    "number": 18,
+    "number": 19,
     "slug": "lady-gaga-td-garden-boston",
     "band": "Lady Gaga",
     "showTitle": "The MAYHEM Ball",
@@ -723,7 +766,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/lady-gaga/2026/td-garden-boston-ma-23400857.html"
   },
   {
-    "number": 19,
+    "number": 20,
     "slug": "shadowgrass-brighton-music-hall-boston",
     "band": "Shadowgrass",
     "venue": "Brighton Music Hall",
@@ -740,7 +783,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/shadowgrass/2026/brighton-music-hall-boston-ma-334ab859.html"
   },
   {
-    "number": 20,
+    "number": 21,
     "slug": "dogs-in-a-pile-aura-portland",
     "band": "Dogs In A Pile",
     "venue": "Aura",
@@ -771,7 +814,7 @@
     "setlistSource": "https://go-set.net/setlists/dogs-in-a-pile-april-17-2026-aura-portland-me-usa.html"
   },
   {
-    "number": 21,
+    "number": 22,
     "slug": "railroad-earth-state-theatre-portland",
     "band": "Railroad Earth",
     "showTitle": "25th Anniversary Tour",
@@ -811,7 +854,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/railroad-earth/2026/state-theatre-portland-me-53751bb9.html"
   },
   {
-    "number": 22,
+    "number": 23,
     "slug": "eggy-3s-artspace-portsmouth",
     "band": "Eggy",
     "showTitle": "Portsmouth, Night One",
@@ -848,7 +891,7 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-may-14-2026-3s-artspace-portsmouth-nh-usa.html"
   },
   {
-    "number": 23,
+    "number": 24,
     "slug": "eggy-3s-artspace-portsmouth-night-two",
     "band": "Eggy",
     "showTitle": "Portsmouth, Night Two",
@@ -890,7 +933,7 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-may-15-2026-3s-artspace-portsmouth-nh-usa.html"
   },
   {
-    "number": 24,
+    "number": 25,
     "slug": "little-feat-state-theatre-portland",
     "band": "Little Feat",
     "showTitle": "The Last Farewell Tour",
@@ -934,7 +977,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/little-feat/2026/state-theatre-portland-me-6b752ada.html"
   },
   {
-    "number": 25,
+    "number": 26,
     "slug": "primus-thompsons-point-portland",
     "band": "Primus",
     "venue": "Thompson's Point",
@@ -971,7 +1014,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/primus/2026/thompsons-point-portland-me-534a0b09.html"
   },
   {
-    "number": 26,
+    "number": 27,
     "slug": "the-strokes-td-garden-boston",
     "band": "The Strokes",
     "venue": "TD Garden",
@@ -1017,7 +1060,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/the-strokes/2026/td-garden-boston-ma-7b767690.html"
   },
   {
-    "number": 27,
+    "number": 28,
     "slug": "sqwerv-portland-house-of-music",
     "band": "Sqwerv",
     "venue": "Portland House of Music and Events",
@@ -1034,7 +1077,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/sqwerv/2026/portland-house-of-music-and-events-portland-me-1b7275b4.html"
   },
   {
-    "number": 28,
+    "number": 29,
     "slug": "goose-leader-bank-pavilion-boston-night-one",
     "band": "Goose",
     "showTitle": "Leader Bank Pavilion, Night One",
@@ -1069,7 +1112,7 @@
     "setlistNote": "Pulled from the live album track listing rather than a fan-submitted setlist.fm page, so the set/encore breakdown is a best guess."
   },
   {
-    "number": 29,
+    "number": 30,
     "slug": "goose-leader-bank-pavilion-boston-night-two",
     "band": "Goose",
     "showTitle": "Leader Bank Pavilion, Night Two",
@@ -1103,7 +1146,7 @@
     "setlistSource": "https://www.boston.com/culture/concert-reviews/2026/07/02/review-setlist-goose-at-leader-bank-pavilion-boston-july-1-2026/"
   },
   {
-    "number": 30,
+    "number": 31,
     "slug": "spafford-3s-artspace-portsmouth",
     "band": "Spafford",
     "showTitle": "Summer Tour 2026",
@@ -1134,7 +1177,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/spafford/2026/3s-artspace-portsmouth-nh-2b73f0da.html"
   },
   {
-    "number": 31,
+    "number": 32,
     "slug": "magoo-jeezum-crow-jay-peak",
     "band": "Magoo",
     "showTitle": "Jeezum Crow Festival",
@@ -1164,7 +1207,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/magoo/2026/stateside-amphitheater-jay-vt-6b737af2.html"
   },
   {
-    "number": 32,
+    "number": 33,
     "slug": "benson-boone-td-garden-boston",
     "band": "Benson Boone",
     "showTitle": "Wanted Man Tour",
@@ -1206,7 +1249,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/benson-boone/2026/td-garden-boston-ma-b76b562.html"
   },
   {
-    "number": 33,
+    "number": 34,
     "slug": "bob-dylan-gilford",
     "band": "Bob Dylan",
     "showTitle": "Long Hot Summer Tour '26",
@@ -1245,7 +1288,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/bob-dylan/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-53766329.html"
   },
   {
-    "number": 34,
+    "number": 35,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -1287,7 +1330,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 35,
+    "number": 36,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -1333,7 +1376,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 36,
+    "number": 37,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -1379,7 +1422,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 37,
+    "number": 38,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -1423,7 +1466,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 38,
+    "number": 39,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -1469,7 +1512,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 39,
+    "number": 40,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
