@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0620"/>
+      <stop offset="55%" stop-color="#200b3d"/>
+      <stop offset="100%" stop-color="#190a2e"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe53b"/>
+      <stop offset="45%" stop-color="#9d4edd"/>
+      <stop offset="75%" stop-color="#ff2e9e"/>
+      <stop offset="100%" stop-color="#05dfd7"/>
+    </linearGradient>
+    <clipPath id="sunClip"><circle cx="920" cy="220" r="260"/></clipPath>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g clip-path="url(#sunClip)">
+    <rect x="660" y="-40" width="520" height="520" fill="url(#sun)"/>
+    <g stroke="#0f0620" stroke-width="10">
+      <line x1="660" y1="260" x2="1180" y2="260"/>
+      <line x1="660" y1="300" x2="1180" y2="300"/>
+      <line x1="660" y1="340" x2="1180" y2="340"/>
+      <line x1="660" y1="380" x2="1180" y2="380"/>
+      <line x1="660" y1="420" x2="1180" y2="420"/>
+    </g>
+  </g>
+  <g stroke="#9d4edd" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="620" x2="1200" y2="620"/>
+    <line x1="0" y1="660" x2="1200" y2="660"/>
+    <line x1="0" y1="700" x2="1200" y2="700"/>
+    <line x1="0" y1="740" x2="1200" y2="740"/>
+    <line x1="0" y1="780" x2="1200" y2="780"/>
+    <line x1="100" y1="600" x2="0" y2="800"/>
+    <line x1="300" y1="600" x2="220" y2="800"/>
+    <line x1="500" y1="600" x2="460" y2="800"/>
+    <line x1="700" y1="600" x2="740" y2="800"/>
+    <line x1="900" y1="600" x2="980" y2="800"/>
+    <line x1="1100" y1="600" x2="1200" y2="800"/>
+  </g>
+  <text x="60" y="480" font-family="Arial, sans-serif" font-weight="900" font-size="90" fill="#ffe53b">THE STROKES</text>
+  <text x="60" y="575" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#ffffff" opacity="0.7">TD GARDEN &#8226; BOSTON, MA</text>
+</svg>
