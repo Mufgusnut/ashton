@@ -9,6 +9,7 @@
  * - GET  /api/concerts/:slug/guests   -> list guests for a show, each with their
  *                                        running total of shows attended with Ashton
  * - POST /api/concerts/:slug/guests   -> add a name to a show's guest list (json: {name})
+ * - GET  /api/guests/:name/shows      -> list every show slug that name appears on
  * - GET  /api/concerts/:slug/sets     -> list downloadable music sets for a show
  *
  * Admin only (Authorization: Bearer <Supabase access token>, same Supabase
@@ -224,6 +225,28 @@ async function listGuests(slug, env, cors) {
     return { name, total: total ? total.count : 1 };
   }));
   return json({ guests }, 200, cors);
+}
+
+async function listGuestShows(name, env, cors) {
+  const normalized = String(name || '').trim().toLowerCase();
+  if (!normalized) return json({ error: 'Name is required.' }, 400, cors);
+
+  const shows = [];
+  let cursor;
+  do {
+    const listing = await env.PHOTOS_KV.list({ prefix: 'guests:', cursor });
+    for (const key of listing.keys) {
+      const slug = key.name.slice('guests:'.length);
+      const raw = await env.PHOTOS_KV.get(key.name);
+      const names = raw ? JSON.parse(raw) : [];
+      if (names.some((n) => n.toLowerCase() === normalized)) {
+        shows.push(slug);
+      }
+    }
+    cursor = listing.list_complete ? undefined : listing.cursor;
+  } while (cursor);
+
+  return json({ shows }, 200, cors);
 }
 
 async function addGuest(slug, request, env, cors) {
@@ -535,6 +558,13 @@ export default {
       if (request.method === 'GET') return listPhotos(slug, env, cors);
       if (request.method === 'POST') return uploadPhoto(slug, request, env, cors);
       return json({ error: 'Method not allowed.' }, 405, cors);
+    }
+
+    const guestShowsMatch = url.pathname.match(/^\/api\/guests\/([^/]+)\/shows\/?$/);
+    if (guestShowsMatch) {
+      if (request.method !== 'GET') return json({ error: 'Method not allowed.' }, 405, cors);
+      const name = decodeURIComponent(guestShowsMatch[1]);
+      return listGuestShows(name, env, cors);
     }
 
     const guestsMatch = url.pathname.match(/^\/api\/concerts\/([^/]+)\/guests\/?$/);

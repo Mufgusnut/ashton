@@ -184,10 +184,8 @@ function renderEmptyStub(number) {
   </div>`;
 }
 
-function renderSpotlight() {
-  if (!concerts.length) return '';
-
-  const spotlightData = concerts.map((c) => ({
+function concertManifest() {
+  return concerts.map((c) => ({
     slug: c.slug,
     number: c.number,
     band: c.band,
@@ -196,6 +194,12 @@ function renderSpotlight() {
     city: c.city,
     date: fmtDate(c.date),
   }));
+}
+
+function renderSpotlight() {
+  if (!concerts.length) return '';
+
+  const spotlightData = concertManifest();
 
   return `
   <section class="spotlight-section" id="spotlight-section" data-api-base="${escapeHtml(config.photosApiBase)}" style="display:none">
@@ -548,7 +552,8 @@ function renderConcertPage(concert, prev, next) {
     `${concert.band} at ${concert.venue}, ${concert.city} on ${fmtDate(concert.date)}.`,
     '../',
     body,
-    `<script src="../assets/js/gallery.js"></script>
+    `<script>window.__ASHTON_CONCERTS_MANIFEST__ = ${JSON.stringify(concertManifest())};</script>
+    <script src="../assets/js/gallery.js"></script>
     <script src="../assets/js/guestlist.js"></script>
     <script src="../assets/js/musicsets.js"></script>`,
   );
