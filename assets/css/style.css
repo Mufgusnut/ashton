@@ -918,6 +918,49 @@ img { max-width: 100%; display: block; }
 
 .admin-set-delete:hover { border-color: var(--pink); }
 
+.admin-set-row-type {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  background: var(--bg-deep);
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+
+.admin-add-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.admin-add-tab {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 18px;
+  color: var(--ink-dim);
+  font-family: 'Bungee', Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-add-tab:hover { color: var(--ink); }
+
+.admin-add-tab.is-active {
+  border-color: var(--pink);
+  color: var(--ink);
+  box-shadow: 0 0 12px rgba(255, 46, 158, 0.25);
+}
+
 .admin-upload-form {
   display: flex;
   flex-wrap: wrap;

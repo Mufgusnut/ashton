@@ -189,13 +189,22 @@ endpoints), so no single request ever needs to carry the whole file. The
 admin page also shows a running total of R2 storage used across the whole
 project (photos + sets), since R2's free tier is 10GB.
 
+If a file is too big or you'd rather point at something already hosted
+elsewhere (Google Drive, Dropbox, SoundCloud, etc.), the admin page has an
+**"Add Link"** tab alongside "Upload File" — just paste a URL and a label
+and it shows up on the show's page the same way, except it opens the link
+in a new tab instead of downloading (`sets/link` endpoint, still
+admin-only to add). Every set record — whether an uploaded file or a
+link — carries its own `id`, which is what deleting it uses.
+
 Everything except downloading is auth-checked server-side in the Worker:
 each admin request carries `Authorization: Bearer <Supabase access token>`,
 and the Worker calls Supabase's `/auth/v1/user` endpoint to verify the
 token and check the role before touching R2/KV — a client-side check alone
 wouldn't be enough, since anyone can read the JS.
 
-To remove a set manually (bypassing the admin UI):
+To remove a set manually (bypassing the admin UI) — the R2 delete step
+only applies to uploaded files, not links:
 
 ```
 cd worker

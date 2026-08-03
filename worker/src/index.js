@@ -12,11 +12,13 @@
  * Admin only (Authorization: Bearer <Supabase access token>, same Supabase
  * project as cuzbro.net; requires app_metadata.role === 'admin' or the
  * shared guest@cuzbro.net account):
- * - POST   /api/admin/concerts/:slug/sets/init      -> start a chunked upload
+ * - POST   /api/admin/concerts/:slug/sets/init      -> start a chunked file upload
  * - PUT    /api/admin/concerts/:slug/sets/part      -> upload one chunk
- * - POST   /api/admin/concerts/:slug/sets/complete  -> finish the upload
+ * - POST   /api/admin/concerts/:slug/sets/complete  -> finish a chunked file upload
  * - POST   /api/admin/concerts/:slug/sets/abort     -> cancel an in-progress upload
- * - DELETE /api/admin/concerts/:slug/sets           -> remove a set (json: {key})
+ * - POST   /api/admin/concerts/:slug/sets/link      -> add a set that just links
+ *                                                      elsewhere (json: {url, label})
+ * - DELETE /api/admin/concerts/:slug/sets           -> remove a set (json: {id})
  * - GET    /api/admin/storage-usage                 -> total R2 bytes used
  *
  * Storage:
@@ -26,7 +28,9 @@
  * - KV `guests:{slug}`        -> JSON array of display names on that show's guest list
  * - KV `guesttotal:{normalized-name}` -> JSON {name, count} — count of distinct shows
  *   that person has been added to, across the whole site.
- * - KV `sets:{slug}`          -> JSON array of {key, filename, label, sizeBytes, uploadedAt, uploadedBy}
+ * - KV `sets:{slug}`          -> JSON array of set records, each either
+ *   {id, type:"file", key, filename, label, sizeBytes, uploadedAt, uploadedBy} or
+ *   {id, type:"link", url, label, uploadedAt, uploadedBy}
  */
 
 const SLUG_RE = /^[a-z0-9-]{1,80}$/;
@@ -250,12 +254,13 @@ async function listSets(slug, env, cors) {
   const raw = await env.PHOTOS_KV.get(`sets:${slug}`);
   const sets = raw ? JSON.parse(raw) : [];
   const withUrls = sets.map((s) => ({
-    key: s.key,
-    filename: s.filename,
+    id: s.id,
+    type: s.type || 'file',
+    filename: s.filename || null,
     label: s.label || '',
     sizeBytes: s.sizeBytes || 0,
     uploadedAt: s.uploadedAt,
-    url: `${env.MEDIA_BASE_URL}/${s.key}`,
+    url: s.type === 'link' ? s.url : `${env.MEDIA_BASE_URL}/${s.key}`,
   }));
   return json({ sets: withUrls }, 200, cors);
 }
@@ -337,6 +342,8 @@ async function completeSet(slug, request, env, cors) {
   const raw = await env.PHOTOS_KV.get(listKey);
   const sets = raw ? JSON.parse(raw) : [];
   const record = {
+    id: crypto.randomUUID(),
+    type: 'file',
     key,
     filename: filename || key.split('/').pop(),
     label: String(label || '').slice(0, 120),
@@ -348,6 +355,42 @@ async function completeSet(slug, request, env, cors) {
   await env.PHOTOS_KV.put(listKey, JSON.stringify(sets));
 
   return json({ set: { ...record, url: `${env.MEDIA_BASE_URL}/${key}` } }, 201, cors);
+}
+
+async function addSetLink(slug, request, env, cors) {
+  const user = await verifyAdmin(request, env);
+  if (!user) return json({ error: 'Unauthorized.' }, 401, cors);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Expected a JSON body.' }, 400, cors);
+  }
+
+  const url = String(body.url || '').trim();
+  if (!/^https?:\/\/.+/i.test(url)) {
+    return json({ error: 'Enter a valid http(s) link.' }, 400, cors);
+  }
+  if (url.length > 2000) {
+    return json({ error: 'That link is too long.' }, 400, cors);
+  }
+
+  const listKey = `sets:${slug}`;
+  const raw = await env.PHOTOS_KV.get(listKey);
+  const sets = raw ? JSON.parse(raw) : [];
+  const record = {
+    id: crypto.randomUUID(),
+    type: 'link',
+    url,
+    label: String(body.label || '').slice(0, 120),
+    uploadedAt: new Date().toISOString(),
+    uploadedBy: user.email || 'admin',
+  };
+  sets.push(record);
+  await env.PHOTOS_KV.put(listKey, JSON.stringify(sets));
+
+  return json({ set: record }, 201, cors);
 }
 
 async function abortSet(slug, request, env, cors) {
@@ -387,17 +430,24 @@ async function deleteSet(slug, request, env, cors) {
     return json({ error: 'Expected a JSON body.' }, 400, cors);
   }
 
-  const key = body.key;
-  if (!key || !key.startsWith(`sets/${slug}/`)) {
-    return json({ error: 'Invalid key.' }, 400, cors);
+  const id = body.id;
+  if (!id) {
+    return json({ error: 'Missing id.' }, 400, cors);
   }
-
-  await env.PHOTOS_BUCKET.delete(key);
 
   const listKey = `sets:${slug}`;
   const raw = await env.PHOTOS_KV.get(listKey);
   const sets = raw ? JSON.parse(raw) : [];
-  await env.PHOTOS_KV.put(listKey, JSON.stringify(sets.filter((s) => s.key !== key)));
+  const record = sets.find((s) => s.id === id);
+  if (!record) {
+    return json({ error: 'Set not found.' }, 404, cors);
+  }
+
+  if (record.type !== 'link' && record.key) {
+    await env.PHOTOS_BUCKET.delete(record.key);
+  }
+
+  await env.PHOTOS_KV.put(listKey, JSON.stringify(sets.filter((s) => s.id !== id)));
 
   return json({ ok: true }, 200, cors);
 }
@@ -473,7 +523,7 @@ export default {
       return json({ error: 'Method not allowed.' }, 405, cors);
     }
 
-    const adminSetsMatch = url.pathname.match(/^\/api\/admin\/concerts\/([^/]+)\/sets\/(init|part|complete|abort)\/?$/);
+    const adminSetsMatch = url.pathname.match(/^\/api\/admin\/concerts\/([^/]+)\/sets\/(init|part|complete|abort|link)\/?$/);
     if (adminSetsMatch) {
       const [, slug, action] = adminSetsMatch;
       if (!SLUG_RE.test(slug)) return json({ error: 'Invalid show identifier.' }, 400, cors);
@@ -481,6 +531,7 @@ export default {
       if (action === 'part' && request.method === 'PUT') return uploadSetPart(slug, request, env, cors, url);
       if (action === 'complete' && request.method === 'POST') return completeSet(slug, request, env, cors);
       if (action === 'abort' && request.method === 'POST') return abortSet(slug, request, env, cors);
+      if (action === 'link' && request.method === 'POST') return addSetLink(slug, request, env, cors);
       return json({ error: 'Method not allowed.' }, 405, cors);
     }
 

@@ -562,6 +562,11 @@ function renderAdminPage() {
 
         <div id="admin-sets-list" class="admin-sets-list"></div>
 
+        <div class="admin-add-tabs">
+          <button type="button" class="admin-add-tab is-active" data-mode="file">Upload File</button>
+          <button type="button" class="admin-add-tab" data-mode="link">Add Link</button>
+        </div>
+
         <form id="admin-upload-form" class="admin-upload-form">
           <input type="text" id="admin-set-label" placeholder="Label (e.g. Full Show, Set 1, Soundboard)" maxlength="120">
           <input type="file" id="admin-set-file" accept="audio/*,.flac,.wav,.aiff,.wma,.m4a" required>
@@ -571,6 +576,13 @@ function renderAdminPage() {
           <div class="admin-upload-progress-bar"><div class="admin-upload-progress-fill" id="admin-upload-progress-fill"></div></div>
           <div id="admin-upload-status" class="admin-status"></div>
         </div>
+
+        <form id="admin-link-form" class="admin-upload-form" style="display:none">
+          <input type="text" id="admin-link-label" placeholder="Label (e.g. Full Show, Set 1, Soundboard)" maxlength="120">
+          <input type="url" id="admin-link-url" placeholder="https://..." required>
+          <button type="submit">Add Link</button>
+        </form>
+        <div id="admin-link-status" class="admin-status" style="display:none"></div>
       </div>
     </div>
   </section>`;

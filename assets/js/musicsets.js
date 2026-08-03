@@ -21,10 +21,17 @@
   }
 
   function addSetCard(set) {
+    const isLink = set.type === 'link';
+
     const card = document.createElement('a');
     card.className = 'set-card';
     card.href = set.url;
-    card.setAttribute('download', set.filename || '');
+    if (isLink) {
+      card.target = '_blank';
+      card.rel = 'noopener';
+    } else {
+      card.setAttribute('download', set.filename || '');
+    }
 
     const info = document.createElement('div');
     info.className = 'set-card-info';
@@ -36,14 +43,16 @@
 
     const meta = document.createElement('div');
     meta.className = 'set-card-meta';
-    meta.textContent = [set.filename, formatBytes(set.sizeBytes)].filter(Boolean).join(' — ');
+    meta.textContent = isLink
+      ? set.url
+      : [set.filename, formatBytes(set.sizeBytes)].filter(Boolean).join(' — ');
     info.appendChild(meta);
 
     card.appendChild(info);
 
     const action = document.createElement('div');
     action.className = 'set-card-download';
-    action.textContent = 'Download';
+    action.textContent = isLink ? 'Open Link' : 'Download';
     card.appendChild(action);
 
     list.appendChild(card);

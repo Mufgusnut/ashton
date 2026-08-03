@@ -31,6 +31,11 @@ if (appEl) {
   const progressWrap = document.getElementById('admin-upload-progress');
   const progressFill = document.getElementById('admin-upload-progress-fill');
   const uploadStatus = document.getElementById('admin-upload-status');
+  const addTabs = document.querySelectorAll('.admin-add-tab');
+  const linkForm = document.getElementById('admin-link-form');
+  const linkLabelInput = document.getElementById('admin-link-label');
+  const linkUrlInput = document.getElementById('admin-link-url');
+  const linkStatus = document.getElementById('admin-link-status');
 
   function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, (c) => ({
@@ -88,13 +93,13 @@ if (appEl) {
     }
   }
 
-  async function deleteSet(slug, key) {
+  async function deleteSet(slug, id) {
     if (!window.confirm('Delete this set? This cannot be undone.')) return;
     try {
       const res = await authedFetch(`${apiBase}/api/admin/concerts/${slug}/sets`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ key }),
+        body: JSON.stringify({ id }),
       });
       if (!res.ok) throw new Error('delete failed');
       refreshSets();
@@ -119,14 +124,16 @@ if (appEl) {
       data.sets.forEach((set) => {
         const row = document.createElement('div');
         row.className = 'admin-set-row';
+        const isLink = set.type === 'link';
+        const meta = isLink ? set.url : `${set.filename} — ${formatBytes(set.sizeBytes)}`;
         row.innerHTML = `
           <div>
-            <div class="admin-set-row-title">${escapeHtml(set.label || set.filename)}</div>
-            <div class="admin-set-row-meta">${escapeHtml(set.filename)} &mdash; ${formatBytes(set.sizeBytes)}</div>
+            <div class="admin-set-row-title"><span class="admin-set-row-type">${isLink ? 'Link' : 'File'}</span>${escapeHtml(set.label || set.filename || set.url)}</div>
+            <div class="admin-set-row-meta">${escapeHtml(meta)}</div>
           </div>
           <button type="button" class="admin-set-delete">Delete</button>
         `;
-        row.querySelector('.admin-set-delete').addEventListener('click', () => deleteSet(slug, set.key));
+        row.querySelector('.admin-set-delete').addEventListener('click', () => deleteSet(slug, set.id));
         setsList.appendChild(row);
       });
     } catch (err) {
@@ -223,6 +230,47 @@ if (appEl) {
     const file = fileInput.files[0];
     if (!file) return;
     uploadFile(file, labelInput.value.trim());
+  });
+
+  addTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      addTabs.forEach((t) => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      const mode = tab.dataset.mode;
+      uploadForm.style.display = mode === 'file' ? '' : 'none';
+      progressWrap.style.display = 'none';
+      linkForm.style.display = mode === 'link' ? '' : 'none';
+      linkStatus.style.display = 'none';
+    });
+  });
+
+  linkForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const slug = showSelect.value;
+    const url = linkUrlInput.value.trim();
+    if (!url) return;
+
+    linkStatus.style.display = '';
+    linkStatus.textContent = 'Adding link...';
+    linkStatus.classList.remove('is-error');
+
+    try {
+      const res = await authedFetch(`${apiBase}/api/admin/concerts/${slug}/sets/link`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, label: linkLabelInput.value.trim() }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Could not add that link.');
+
+      linkStatus.textContent = 'Link added.';
+      linkUrlInput.value = '';
+      linkLabelInput.value = '';
+      refreshSets();
+    } catch (err) {
+      linkStatus.textContent = err.message || 'Could not add that link.';
+      linkStatus.classList.add('is-error');
+    }
   });
 
   showSelect.addEventListener('change', refreshSets);
