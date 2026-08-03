@@ -82,44 +82,42 @@
   },
   {
     "number": 3,
-    "slug": "the-revivalists-capitol-theatre-port-chester",
+    "slug": "the-revivalists-state-theatre-portland",
     "band": "The Revivalists",
     "showTitle": "The All in the Family Tour",
-    "venue": "Capitol Theatre",
-    "city": "Port Chester, NY",
-    "date": "2025-09-22",
-    "photo": "assets/img/concerts/the-revivalists-port-chester.svg",
+    "venue": "State Theatre",
+    "city": "Portland, ME",
+    "date": "2025-09-21",
+    "photo": "assets/img/concerts/the-revivalists-portland.svg",
     "photos": [],
     "guestList": [],
-    "supportActs": [
-      "Nolan Taylor"
-    ],
     "setlist": {
       "set1": [
         "Stand Up",
-        "Bulletproof",
+        "Keep Going",
         "Bitter End",
         "Amber",
         "Need You",
         "Monster",
         "Move On",
-        "All in the Family",
+        "Bulletproof",
         "Bulls on Parade (Rage Against the Machine cover)",
+        "All in the Family",
         "Fade Away",
-        "Keep Going",
         "King of What",
         "Piece of Me (Cigar Box)",
-        "BTBD",
+        "Criminal",
         "It Was a Sin"
       ],
       "set2": [],
       "encore": [
         "Gold to Glass",
-        "With a Little Help From My Friends (The Beatles cover, with Nolan Taylor)",
+        "Punkrocker (Teddybears cover)",
         "Wish I Knew You"
       ]
     },
-    "setlistSource": "https://www.setlist.fm/setlist/the-revivalists/2025/capitol-theatre-port-chester-ny-2342d86f.html"
+    "setlistSource": "https://www.setlist.fm/setlist/the-revivalists/2025/state-theatre-portland-me-3342d869.html",
+    "setlistNote": "Marked \"incomplete and out of order\" on setlist.fm, so the exact sequence and set/encore split above is a best guess."
   },
   {
     "number": 4,
