@@ -1,6 +1,35 @@
 [
   {
     "number": 1,
+    "slug": "billy-strings-prudential-center-newark",
+    "band": "Billy Strings",
+    "venue": "Prudential Center",
+    "city": "Newark, NJ",
+    "date": "2025-11-14",
+    "photo": "assets/img/concerts/billy-strings-newark.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": ["I'm One of Those", "Age (Jim Croce cover)", "St. Louis Blues (W.C. Handy's Memphis Blues Band cover)", "It Ain't Before", "Hellbender", "Escanaba", "Highway Hypnosis", "Show Me the Door", "Little Maggie (traditional)", "Harbor of Love (The Stanley Brothers cover)", "Red Daisy", "Libby Phillips Rag (Jarrod Walker cover)", "End of the Rainbow (Frank Wakefield cover)"],
+      "set2": ["Leadfoot", "Don't Be Calling Me (At 4am)", "Seney Stretch", "Sally Johnson (traditional)", "Love and Regret", "Dust in a Baggie (Billy Strings & Don Julin song)", "Leaders", "Planet Caravan (Black Sabbath cover)", "Spinning", "So Many Miles (Billy Failing cover)", "Everything's the Same"],
+      "encore": ["With a Vamp in the Middle (John Hartford cover)", "This Heart of Mine (New Grass Revival cover)"]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/prudential-center-newark-nj-4b478f16.html"
+  },
+  {
+    "number": 2,
+    "slug": "bela-fleck-flecktones-portland",
+    "band": "Béla Fleck and the Flecktones",
+    "showTitle": "Jingle All the Way",
+    "venue": "State Theatre",
+    "city": "Portland, ME",
+    "date": "2025-12-07",
+    "photo": "assets/img/concerts/bela-fleck-portland.svg",
+    "photos": [],
+    "guestList": []
+  },
+  {
+    "number": 3,
     "slug": "goosemas-xii-night-one-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night One",
@@ -18,7 +47,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
   },
   {
-    "number": 2,
+    "number": 4,
     "slug": "goosemas-xii-night-two-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night Two",
@@ -36,7 +65,41 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
   },
   {
-    "number": 3,
+    "number": 5,
+    "slug": "pigeons-playing-ping-pong-portland",
+    "band": "Pigeons Playing Ping Pong",
+    "venue": "State Theatre",
+    "city": "Portland, ME",
+    "date": "2026-02-27",
+    "photo": "assets/img/concerts/pigeons-portland.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": ["Porcupine", "Whoopie", "Day in Time", "Right Track", "Hedwig's Theme (John Williams cover)", "Avalanche", "Backslide", "Fun in Funk"],
+      "set2": ["Move Like That", "Twitch", "Distant Times", "Shine on You Crazy Diamond (Pink Floyd cover)", "Rocket Man (I Think It's Going to Be a Long, Long Time) (Elton John cover)", "Horizon", "Blue Light", "King Kong"],
+      "encore": ["Ocean Flows"]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/pigeons-playing-ping-pong/2026/state-theatre-portland-me-7b4cd224.html"
+  },
+  {
+    "number": 6,
+    "slug": "eggy-3s-artspace-portsmouth",
+    "band": "Eggy",
+    "venue": "3S Artspace",
+    "city": "Portsmouth, NH",
+    "date": "2026-05-14",
+    "photo": "assets/img/concerts/eggy-portsmouth.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": ["Smile", "Silver Steed (My Blue)", "Come Up Slow", "Shallow Rivers", "Bad Side Of The Moon", "I Pray", "Bad Side Of The Moon (reprise)", "Boom or Bust"],
+      "set2": ["Woah There", "Thorns", "Woah There (reprise)", "All Wheels Turnin'", "Finding and Losing", "All Wheels Turnin' (reprise)", "Finding and Losing (reprise)"],
+      "encore": ["12 Pounds of Pain"]
+    },
+    "setlistSource": "https://thecarton.net/setlists/eggy-may-14-2026-3s-artspace-portsmouth-nh-usa.html"
+  },
+  {
+    "number": 7,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -53,7 +116,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 4,
+    "number": 8,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -71,7 +134,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 5,
+    "number": 9,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -89,7 +152,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 6,
+    "number": 10,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -107,7 +170,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 7,
+    "number": 11,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -125,7 +188,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 8,
+    "number": 12,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
