@@ -1,6 +1,87 @@
 [
   {
     "number": 1,
+    "slug": "govt-mule-bowl-in-the-pines-sidney",
+    "band": "Gov't Mule",
+    "venue": "Bowl in the Pines",
+    "city": "Sidney, ME",
+    "date": "2025-09-07",
+    "photo": "assets/img/concerts/govt-mule-sidney.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": [
+      "moe."
+    ],
+    "setlist": {
+      "set1": [
+        "Soulshine (The Allman Brothers Band cover)",
+        "Mule",
+        "Temporary Saint",
+        "Wake Up Dead",
+        "Sco-Mule (with Chuck Garvey of moe. on guitar)",
+        "Gone Too Long",
+        "She Said She Said (The Beatles cover)",
+        "Tomorrow Never Knows (The Beatles cover, jam with Taxman tease)",
+        "I Feel Like Breaking Up Somebody's Home Tonight (Ann Peebles cover)",
+        "Unring the Bell",
+        "Brand New Angel",
+        "Endless Parade",
+        "Mr. Man"
+      ],
+      "set2": [],
+      "encore": [
+        "Sugaree (Jerry Garcia cover, with Al Schnier of moe. on guitar and vocals)"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/govt-mule/2025/bowl-in-the-pines-sidney-me-2b4408f6.html"
+  },
+  {
+    "number": 2,
+    "slug": "blink-182-gilford",
+    "band": "blink-182",
+    "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
+    "city": "Gilford, NH",
+    "date": "2025-09-09",
+    "photo": "assets/img/concerts/blink-182-gilford.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": [
+      "Alkaline Trio",
+      "Drug Church"
+    ],
+    "setlist": {
+      "set1": [
+        "Intro (played from tape)",
+        "The Rock Show",
+        "First Date",
+        "Josie",
+        "Anthem Part Two",
+        "Online Songs",
+        "M+M's",
+        "FUCK FACE",
+        "Dumpweed",
+        "Feeling This",
+        "Down",
+        "TURPENTINE",
+        "CAN'T GO BACK",
+        "Wishing Well",
+        "Stay Together for the Kids",
+        "Roller Coaster",
+        "DANCE WITH ME",
+        "I Miss You",
+        "MORE THAN YOU KNOW",
+        "Hope (Descendents cover)",
+        "What's My Age Again?",
+        "All the Small Things",
+        "Dammit (with a snippet of TLC's \"No Scrubs\" during the bridge)"
+      ],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/blink182/2025/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-4359db0b.html"
+  },
+  {
+    "number": 3,
     "slug": "oteil-and-friends-waterville",
     "band": "Oteil & Friends",
     "venue": "Waterville Opera House",
@@ -36,7 +117,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/oteil-and-friends/2025/waterville-opera-house-waterville-me-3341e885.html"
   },
   {
-    "number": 2,
+    "number": 4,
     "slug": "billy-strings-prudential-center-newark",
     "band": "Billy Strings",
     "venue": "Prudential Center",
@@ -82,7 +163,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/prudential-center-newark-nj-4b478f16.html"
   },
   {
-    "number": 3,
+    "number": 5,
     "slug": "bela-fleck-flecktones-portland",
     "band": "Béla Fleck and the Flecktones",
     "showTitle": "Jingle All the Way",
@@ -126,7 +207,7 @@
     "setlistNote": "No setlist has been documented for this exact show. This is the setlist from the Beacon Theatre, NYC stop of the same Jingle All the Way tour on 12/10/2025 — a close approximation, not necessarily what was played in Portland."
   },
   {
-    "number": 4,
+    "number": 6,
     "slug": "goosemas-xii-night-one-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night One",
@@ -164,7 +245,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
   },
   {
-    "number": 5,
+    "number": 7,
     "slug": "goosemas-xii-night-two-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night Two",
@@ -203,7 +284,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
   },
   {
-    "number": 6,
+    "number": 8,
     "slug": "pigeons-playing-ping-pong-portland",
     "band": "Pigeons Playing Ping Pong",
     "venue": "State Theatre",
@@ -240,7 +321,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/pigeons-playing-ping-pong/2026/state-theatre-portland-me-7b4cd224.html"
   },
   {
-    "number": 7,
+    "number": 9,
     "slug": "eggy-3s-artspace-portsmouth",
     "band": "Eggy",
     "venue": "3S Artspace",
@@ -276,7 +357,7 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-may-14-2026-3s-artspace-portsmouth-nh-usa.html"
   },
   {
-    "number": 8,
+    "number": 10,
     "slug": "primus-thompsons-point-portland",
     "band": "Primus",
     "venue": "Thompson's Point",
@@ -313,7 +394,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/primus/2026/thompsons-point-portland-me-534a0b09.html"
   },
   {
-    "number": 9,
+    "number": 11,
     "slug": "the-strokes-td-garden-boston",
     "band": "The Strokes",
     "venue": "TD Garden",
@@ -359,7 +440,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/the-strokes/2026/td-garden-boston-ma-7b767690.html"
   },
   {
-    "number": 10,
+    "number": 12,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -401,7 +482,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 11,
+    "number": 13,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -447,7 +528,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 12,
+    "number": 14,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -493,7 +574,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 13,
+    "number": 15,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -537,7 +618,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 14,
+    "number": 16,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -583,7 +664,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 15,
+    "number": 17,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
@@ -621,5 +702,22 @@
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-5b4a4f58.html"
+  },
+  {
+    "number": 18,
+    "slug": "daniel-donatos-cosmic-country-bourbon-and-beyond",
+    "band": "Daniel Donato's Cosmic Country",
+    "showTitle": "Bourbon & Beyond",
+    "venue": "Bourbon & Beyond Festival",
+    "city": "Louisville, KY",
+    "date": "2026-09-27",
+    "photo": "assets/img/concerts/daniel-donato-louisville.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [],
+      "set2": [],
+      "encore": []
+    }
   }
 ]
