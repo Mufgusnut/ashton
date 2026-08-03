@@ -178,6 +178,39 @@ function renderEmptyStub(number) {
   </div>`;
 }
 
+function renderSpotlight() {
+  if (!concerts.length) return '';
+
+  const spotlightData = concerts.map((c) => ({
+    slug: c.slug,
+    number: c.number,
+    band: c.band,
+    showTitle: c.showTitle || '',
+    venue: c.venue,
+    city: c.city,
+    date: fmtDate(c.date),
+    photo: c.photo,
+  }));
+
+  return `
+  <section class="spotlight-section">
+    <div class="wrap">
+      <span class="eyebrow spotlight-eyebrow">Random Rewind</span>
+      <a class="spotlight-card" id="spotlight-card" href="#">
+        <div class="spotlight-media">
+          <img class="spotlight-img" id="spotlight-img" src="" alt="">
+          <span class="spotlight-num" id="spotlight-num"></span>
+        </div>
+        <div class="spotlight-caption">
+          <div class="spotlight-band" id="spotlight-band"></div>
+          <div class="spotlight-meta" id="spotlight-meta"></div>
+        </div>
+      </a>
+    </div>
+  </section>
+  <script>window.__ASHTON_SPOTLIGHT__ = ${JSON.stringify(spotlightData)};</script>`;
+}
+
 function renderIndex() {
   const byNumber = new Map(concerts.map((c) => [c.number, c]));
   const slots = [];
@@ -225,6 +258,8 @@ function renderIndex() {
     </div>
   </section>
 
+  ${renderSpotlight()}
+
   <section class="section" id="shows">
     <div class="wrap">
       <div class="section-head">
@@ -237,7 +272,8 @@ function renderIndex() {
     </div>
   </section>`;
 
-  const extraScript = `<script src="assets/js/main.js"></script>`;
+  const extraScript = `<script src="assets/js/main.js"></script>
+  <script src="assets/js/spotlight.js"></script>`;
   return page(
     config.siteName,
     `${config.personName}'s year of chasing ${goal} concerts before turning ${goal}.`,
