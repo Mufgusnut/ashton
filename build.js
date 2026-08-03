@@ -35,6 +35,19 @@ function stars(rating) {
   return '★'.repeat(full) + '☆'.repeat(5 - full);
 }
 
+// Strips trailing "(...)" annotations (cover credit, "with X", "reprise", etc.)
+// so the same song counts as one entry regardless of how a given performance
+// was annotated, e.g. "Jingle Bells (with Alash and Sierra Hull)" -> "Jingle Bells".
+function normalizeSongTitle(raw) {
+  let title = raw.trim();
+  for (;;) {
+    const stripped = title.replace(/\s*\([^()]*\)\s*$/, '').trim();
+    if (!stripped || stripped === title) break;
+    title = stripped;
+  }
+  return title || raw.trim();
+}
+
 // ---------------------------------------------------------------------
 // derived stats
 // ---------------------------------------------------------------------
@@ -50,6 +63,19 @@ const setlistSongCount = (concert) => {
 };
 const totalSongs = concerts.reduce((sum, c) => sum + setlistSongCount(c), 0);
 const progressPct = goal ? Math.round((totalShows / goal) * 100) : 0;
+
+const songCounts = new Map();
+concerts.forEach((c) => {
+  if (!c.setlist) return;
+  const { set1 = [], set2 = [], encore = [] } = c.setlist;
+  [...set1, ...set2, ...encore].forEach((raw) => {
+    const title = normalizeSongTitle(raw);
+    songCounts.set(title, (songCounts.get(title) || 0) + 1);
+  });
+});
+const songFrequency = Array.from(songCounts.entries())
+  .map(([title, count]) => ({ title, count }))
+  .sort((a, b) => b.count - a.count || a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
 
 // ---------------------------------------------------------------------
 // shared chrome
@@ -80,6 +106,7 @@ function header(prefix) {
       <nav class="site-nav">
         <a href="${prefix}index.html">Home</a>
         <a href="${prefix}index.html#shows">All Shows</a>
+        <a href="${prefix}song-frequency.html">Song Frequency</a>
       </nav>
     </div>
   </header>`;
@@ -205,6 +232,58 @@ function renderIndex() {
     '',
     body,
     extraScript,
+  );
+}
+
+// ---------------------------------------------------------------------
+// song frequency page
+// ---------------------------------------------------------------------
+
+function renderSongFrequencyPage() {
+  const rows = songFrequency.map(({ title, count }, i) => `<div class="freq-row">
+        <div class="freq-rank">#${i + 1}</div>
+        <div class="freq-title">${escapeHtml(title)}</div>
+        <div class="freq-count">${count} play${count === 1 ? '' : 's'}</div>
+      </div>`).join('\n      ');
+
+  const body = `
+  <section class="concert-hero">
+    <div class="wrap">
+      <a class="back-link" href="index.html">&larr; Home</a>
+      <div class="show-number">Across ${totalShows} show${totalShows === 1 ? '' : 's'}</div>
+      <h1>Song Frequency</h1>
+      <p class="tagline">Every song played so far, ranked by how often it's shown up &mdash; ties broken alphabetically.</p>
+
+      <div class="hero-stats" style="margin-top:32px;">
+        <div class="stat-block">
+          <div class="num">${songFrequency.length}</div>
+          <div class="label">Unique Songs</div>
+        </div>
+        <div class="stat-block">
+          <div class="num">${totalSongs}</div>
+          <div class="label">Total Plays</div>
+        </div>
+        <div class="stat-block">
+          <div class="num">${songFrequency[0] ? songFrequency[0].count : 0}</div>
+          <div class="label">Top Song's Plays</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="freq-list">
+        ${rows || '<p class="guest-list-empty">No setlists logged yet.</p>'}
+      </div>
+    </div>
+  </section>`;
+
+  return page(
+    `Song Frequency | ${config.siteName}`,
+    `Every song ${config.personName} has heard so far, ranked by how often it's been played.`,
+    '',
+    body,
   );
 }
 
@@ -383,6 +462,7 @@ function renderConcertPage(concert, prev, next) {
 // ---------------------------------------------------------------------
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), renderIndex());
+fs.writeFileSync(path.join(ROOT, 'song-frequency.html'), renderSongFrequencyPage());
 
 const concertsDir = path.join(ROOT, 'concerts');
 if (!fs.existsSync(concertsDir)) fs.mkdirSync(concertsDir, { recursive: true });
