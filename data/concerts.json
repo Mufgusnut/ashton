@@ -82,6 +82,47 @@
   },
   {
     "number": 3,
+    "slug": "the-revivalists-capitol-theatre-port-chester",
+    "band": "The Revivalists",
+    "showTitle": "The All in the Family Tour",
+    "venue": "Capitol Theatre",
+    "city": "Port Chester, NY",
+    "date": "2025-09-22",
+    "photo": "assets/img/concerts/the-revivalists-port-chester.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": [
+      "Nolan Taylor"
+    ],
+    "setlist": {
+      "set1": [
+        "Stand Up",
+        "Bulletproof",
+        "Bitter End",
+        "Amber",
+        "Need You",
+        "Monster",
+        "Move On",
+        "All in the Family",
+        "Bulls on Parade (Rage Against the Machine cover)",
+        "Fade Away",
+        "Keep Going",
+        "King of What",
+        "Piece of Me (Cigar Box)",
+        "BTBD",
+        "It Was a Sin"
+      ],
+      "set2": [],
+      "encore": [
+        "Gold to Glass",
+        "With a Little Help From My Friends (The Beatles cover, with Nolan Taylor)",
+        "Wish I Knew You"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/the-revivalists/2025/capitol-theatre-port-chester-ny-2342d86f.html"
+  },
+  {
+    "number": 4,
     "slug": "daniel-donatos-cosmic-country-royale-boston",
     "band": "Daniel Donato's Cosmic Country",
     "showTitle": "Horizons Fall Tour",
@@ -124,7 +165,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/daniel-donato/2025/royale-boston-ma-2345a4ab.html"
   },
   {
-    "number": 4,
+    "number": 5,
     "slug": "oteil-and-friends-waterville",
     "band": "Oteil & Friends",
     "venue": "Waterville Opera House",
@@ -160,7 +201,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/oteil-and-friends/2025/waterville-opera-house-waterville-me-3341e885.html"
   },
   {
-    "number": 5,
+    "number": 6,
     "slug": "billy-strings-baltimore-halloween",
     "band": "Billy Strings",
     "showTitle": "Meet Me at the Crypt",
@@ -216,7 +257,24 @@
     "setlistNote": "Halloween-themed 'Meet Me at the Crypt' show with a rotating cast of guests throughout — Cory Henry, Alwyn Robinson, Cris Jacobs, and the Charm City Coven strings were on stage most of the night."
   },
   {
-    "number": 6,
+    "number": 7,
+    "slug": "leftover-salmon-nevermore-hall-baltimore",
+    "band": "Leftover Salmon",
+    "venue": "Nevermore Hall",
+    "city": "Baltimore, MD",
+    "date": "2025-10-31",
+    "photo": "assets/img/concerts/leftover-salmon-baltimore.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/leftover-salmon/2025/nevermore-hall-baltimore-md-b4f85c2.html"
+  },
+  {
+    "number": 8,
     "slug": "billy-strings-baltimore-night-two",
     "band": "Billy Strings",
     "venue": "CFG Bank Arena",
@@ -260,7 +318,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/cfg-bank-arena-baltimore-md-6b478eea.html"
   },
   {
-    "number": 7,
+    "number": 9,
     "slug": "billy-strings-prudential-center-newark",
     "band": "Billy Strings",
     "venue": "Prudential Center",
@@ -306,7 +364,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/prudential-center-newark-nj-4b478f16.html"
   },
   {
-    "number": 8,
+    "number": 10,
     "slug": "bela-fleck-flecktones-portland",
     "band": "Béla Fleck and the Flecktones",
     "showTitle": "Jingle All the Way",
@@ -350,7 +408,7 @@
     "setlistNote": "No setlist has been documented for this exact show. This is the setlist from the Beacon Theatre, NYC stop of the same Jingle All the Way tour on 12/10/2025 — a close approximation, not necessarily what was played in Portland."
   },
   {
-    "number": 9,
+    "number": 11,
     "slug": "goosemas-xii-night-one-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night One",
@@ -388,7 +446,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
   },
   {
-    "number": 10,
+    "number": 12,
     "slug": "goosemas-xii-night-two-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night Two",
@@ -427,7 +485,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
   },
   {
-    "number": 11,
+    "number": 13,
     "slug": "eggy-state-theatre-portland",
     "band": "Eggy",
     "venue": "State Theatre",
@@ -454,7 +512,47 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-january-10-2026-state-theatre-portland-me-usa.html"
   },
   {
-    "number": 12,
+    "number": 14,
+    "slug": "sound-tribe-sector-9-big-night-live-boston",
+    "band": "Sound Tribe Sector 9",
+    "showTitle": "Human Dream Tour 2026",
+    "venue": "Big Night Live",
+    "city": "Boston, MA",
+    "date": "2026-02-19",
+    "photo": "assets/img/concerts/sts9-boston.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Move My Peeps",
+        "Enceladus",
+        "Frequencies Peace 2",
+        "Frequencies Peace 3",
+        "Reminisce",
+        "118",
+        "Balancing",
+        "Vapors",
+        "Big Basin"
+      ],
+      "set2": [
+        "New Dawn, New Day",
+        "GLASS-z13",
+        "Ramone & Emiglio",
+        "Sky High",
+        "Circus",
+        "Blu Mood",
+        "Click Lang Echo",
+        "When the Dust Settles"
+      ],
+      "encore": [
+        "Native End",
+        "ReEmergence"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/sound-tribe-sector-9/2026/big-night-live-boston-ma-234fbc4f.html"
+  },
+  {
+    "number": 15,
     "slug": "pigeons-playing-ping-pong-portland",
     "band": "Pigeons Playing Ping Pong",
     "venue": "State Theatre",
@@ -491,7 +589,41 @@
     "setlistSource": "https://www.setlist.fm/setlist/pigeons-playing-ping-pong/2026/state-theatre-portland-me-7b4cd224.html"
   },
   {
-    "number": 13,
+    "number": 16,
+    "slug": "spafford-the-sinclair-cambridge",
+    "band": "Spafford",
+    "showTitle": "Winter Tour 2026",
+    "venue": "The Sinclair",
+    "city": "Cambridge, MA",
+    "date": "2026-03-13",
+    "photo": "assets/img/concerts/spafford-cambridge.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Comfortable",
+        "Motel 6",
+        "Dissociation Assist",
+        "Mad World (Tears for Fears cover)",
+        "High Beams",
+        "Take Your Mama (Scissor Sisters cover)"
+      ],
+      "set2": [
+        "Money for Nothing (Dire Straits cover)",
+        "Double Time",
+        "Nocturnal Emissions",
+        "Electric Taco Stand",
+        "Dis Go in 5?",
+        "Electric Taco Stand (reprise)"
+      ],
+      "encore": [
+        "West L.A. Fadeaway (Grateful Dead cover)"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/spafford/2026/the-sinclair-cambridge-ma-1b4c61b4.html"
+  },
+  {
+    "number": 17,
     "slug": "lady-gaga-td-garden-boston",
     "band": "Lady Gaga",
     "showTitle": "The MAYHEM Ball",
@@ -546,7 +678,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/lady-gaga/2026/td-garden-boston-ma-23400857.html"
   },
   {
-    "number": 14,
+    "number": 18,
     "slug": "shadowgrass-brighton-music-hall-boston",
     "band": "Shadowgrass",
     "venue": "Brighton Music Hall",
@@ -563,7 +695,47 @@
     "setlistSource": "https://www.setlist.fm/setlist/shadowgrass/2026/brighton-music-hall-boston-ma-334ab859.html"
   },
   {
-    "number": 15,
+    "number": 19,
+    "slug": "railroad-earth-mahaiwe-great-barrington",
+    "band": "Railroad Earth",
+    "showTitle": "25th Anniversary Tour",
+    "venue": "Mahaiwe Performing Arts Center",
+    "city": "Great Barrington, MA",
+    "date": "2026-05-09",
+    "photo": "assets/img/concerts/railroad-earth-great-barrington.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Across the Great Divide",
+        "Running Wild Again",
+        "Colorado",
+        "Chains",
+        "Crossing the Gap",
+        "Farewell to Isinglass",
+        "Grandfather Mountain",
+        "Hard Livin'"
+      ],
+      "set2": [
+        "Everything Keeps Changin'",
+        "Day on the Sand",
+        "For Love (Robert Earl Keen cover)",
+        "The Jupiter & the 119",
+        "My Favorite Spot",
+        "Just So You Know",
+        "Right in Tune",
+        "1759",
+        "Fisherman's Blues (The Waterboys cover)",
+        "Seven Story Mountain"
+      ],
+      "encore": [
+        "Adding My Voice"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/railroad-earth/2026/mahaiwe-performing-arts-center-great-barrington-ma-b74856a.html"
+  },
+  {
+    "number": 20,
     "slug": "eggy-3s-artspace-portsmouth",
     "band": "Eggy",
     "venue": "3S Artspace",
@@ -599,7 +771,51 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-may-14-2026-3s-artspace-portsmouth-nh-usa.html"
   },
   {
-    "number": 16,
+    "number": 21,
+    "slug": "little-feat-state-theatre-portland",
+    "band": "Little Feat",
+    "showTitle": "The Last Farewell Tour",
+    "venue": "State Theatre",
+    "city": "Portland, ME",
+    "date": "2026-06-03",
+    "photo": "assets/img/concerts/little-feat-portland.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "4 Days of Heaven 3 Days of Work",
+        "Two Trains",
+        "Fat Man in the Bathtub",
+        "Hate to Lose Your Lovin'",
+        "Long Distance Love",
+        "Old Folks Boogie",
+        "Shipwrecks",
+        "The Fan",
+        "Red Streamliner",
+        "Time Loves a Hero"
+      ],
+      "set2": [
+        "Rad Gumbo (acoustic)",
+        "Running Out of Time with the Blues (acoustic)",
+        "Roll Um Easy (acoustic)",
+        "Church Falling Down (acoustic)",
+        "Willin' (acoustic)",
+        "Gringo (played by request, not on the setlist)",
+        "Day at the Dog Races",
+        "Let It Roll",
+        "Oh Atlanta",
+        "A Apolitical Blues / Long Distance Call (with Jeffrey Lockhart)",
+        "Spanish Moon",
+        "Dixie Chicken",
+        "Teenage Nervous Breakdown",
+        "Feats Don't Fail Me Now"
+      ],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/little-feat/2026/state-theatre-portland-me-6b752ada.html"
+  },
+  {
+    "number": 22,
     "slug": "primus-thompsons-point-portland",
     "band": "Primus",
     "venue": "Thompson's Point",
@@ -636,7 +852,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/primus/2026/thompsons-point-portland-me-534a0b09.html"
   },
   {
-    "number": 17,
+    "number": 23,
     "slug": "the-strokes-td-garden-boston",
     "band": "The Strokes",
     "venue": "TD Garden",
@@ -682,7 +898,235 @@
     "setlistSource": "https://www.setlist.fm/setlist/the-strokes/2026/td-garden-boston-ma-7b767690.html"
   },
   {
-    "number": 18,
+    "number": 24,
+    "slug": "sqwerv-portland-house-of-music",
+    "band": "Sqwerv",
+    "venue": "Portland House of Music and Events",
+    "city": "Portland, ME",
+    "date": "2026-06-28",
+    "photo": "assets/img/concerts/sqwerv-portland.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/sqwerv/2026/portland-house-of-music-and-events-portland-me-1b7275b4.html"
+  },
+  {
+    "number": 25,
+    "slug": "goose-leader-bank-pavilion-boston-night-one",
+    "band": "Goose",
+    "showTitle": "Leader Bank Pavilion, Night One",
+    "venue": "Leader Bank Pavilion",
+    "city": "Boston, MA",
+    "date": "2026-06-30",
+    "photo": "assets/img/concerts/goose-boston-1.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Animal",
+        "Feel It Now",
+        "Dr. Darkness",
+        "Drive",
+        "Torero",
+        "Earthling Or Alien?"
+      ],
+      "set2": [
+        "Everything Must Go",
+        "Arrow",
+        "Bob Don't",
+        "Into the Myst",
+        "Running Up That Hill (Kate Bush cover)",
+        "Madhuvan"
+      ],
+      "encore": [
+        "Silver Rising"
+      ]
+    },
+    "setlistSource": "https://goosetheband.bandcamp.com/album/2026-06-30-leader-bank-pavilion-boston-ma",
+    "setlistNote": "Pulled from the live album track listing rather than a fan-submitted setlist.fm page, so the set/encore breakdown is a best guess."
+  },
+  {
+    "number": 26,
+    "slug": "goose-leader-bank-pavilion-boston-night-two",
+    "band": "Goose",
+    "showTitle": "Leader Bank Pavilion, Night Two",
+    "venue": "Leader Bank Pavilion",
+    "city": "Boston, MA",
+    "date": "2026-07-01",
+    "photo": "assets/img/concerts/goose-boston-2.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Iguana Song",
+        "Royal",
+        "It Burns Within",
+        "Wysteria Lane",
+        "Electric Avenue (Eddy Grant cover)",
+        "Draconian Meter Maid",
+        "Flodown"
+      ],
+      "set2": [
+        "Big Modern!",
+        "Creatures",
+        "Jive II",
+        "Jive Lee"
+      ],
+      "encore": [
+        "Doobie Song",
+        "Give It Time"
+      ]
+    },
+    "setlistSource": "https://www.boston.com/culture/concert-reviews/2026/07/02/review-setlist-goose-at-leader-bank-pavilion-boston-july-1-2026/"
+  },
+  {
+    "number": 27,
+    "slug": "spafford-3s-artspace-portsmouth",
+    "band": "Spafford",
+    "showTitle": "Summer Tour 2026",
+    "venue": "3S Artspace",
+    "city": "Portsmouth, NH",
+    "date": "2026-07-08",
+    "photo": "assets/img/concerts/spafford-portsmouth.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Comfortable",
+        "Night After Night",
+        "A Union Divine (Don McCloskey cover)",
+        "The Remedy",
+        "Darkness Singularity"
+      ],
+      "set2": [
+        "Peaches (The Presidents of the United States of America cover)",
+        "Electric Taco Stand",
+        "Motel 6",
+        "Double Time"
+      ],
+      "encore": [
+        "Space Gadget"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/spafford/2026/3s-artspace-portsmouth-nh-2b73f0da.html"
+  },
+  {
+    "number": 28,
+    "slug": "magoo-jeezum-crow-jay-peak",
+    "band": "Magoo",
+    "showTitle": "Jeezum Crow Festival",
+    "venue": "Stateside Amphitheater, Jay Peak Resort",
+    "city": "Jay, VT",
+    "date": "2026-07-11",
+    "photo": "assets/img/concerts/magoo-jay.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Hold Whatcha Got (Jimmy Martin and the Sunny Mountain Boys cover)",
+        "Close to Her Moon",
+        "Oregon Trail",
+        "Temperance Reel (traditional, with Roland Clark)",
+        "It's Mighty Dark to Travel (Bill Monroe and the Bluegrass Boys cover, with Roland Clark)",
+        "Big Fall",
+        "Unidentified jam (\"Train, won't you take my blues away...\")",
+        "I Know You Rider (traditional)",
+        "Catch Me If You Can",
+        "Stay Cruisin'",
+        "New Country Blues (Emmitt-Nershi Band cover)"
+      ],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/magoo/2026/stateside-amphitheater-jay-vt-6b737af2.html"
+  },
+  {
+    "number": 29,
+    "slug": "benson-boone-td-garden-boston",
+    "band": "Benson Boone",
+    "showTitle": "Wanted Man Tour",
+    "venue": "TD Garden",
+    "city": "Boston, MA",
+    "date": "2026-07-15",
+    "photo": "assets/img/concerts/benson-boone-boston.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": [
+      "Olivia O'Brien"
+    ],
+    "setlist": {
+      "set1": [
+        "Sorry I'm Here for Someone Else",
+        "Mr Electric Blue",
+        "There She Goes",
+        "Wanted Man",
+        "Drunk in My Mind",
+        "Slow It Down",
+        "Mystical Magical",
+        "Pretty Slowly",
+        "In the Stars",
+        "My Greatest Fear",
+        "Take Me Home",
+        "Young American Heart",
+        "Love You Again",
+        "Momma Song",
+        "Before You",
+        "The Time of My Life",
+        "I Wanna Be the One You Call",
+        "What Was",
+        "Cry",
+        "Beautiful Things"
+      ],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/benson-boone/2026/td-garden-boston-ma-b76b562.html"
+  },
+  {
+    "number": 30,
+    "slug": "bob-dylan-gilford",
+    "band": "Bob Dylan",
+    "showTitle": "Long Hot Summer Tour '26",
+    "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
+    "city": "Gilford, NH",
+    "date": "2026-07-18",
+    "photo": "assets/img/concerts/bob-dylan-gilford.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": [
+      "Jimmie Vaughan & The Tilt-A-Whirl Band",
+      "Brittney Spencer"
+    ],
+    "setlist": {
+      "set1": [
+        "Watching the River Flow",
+        "Man in the Long Black Coat",
+        "It Ain't Me, Babe",
+        "Tryin' to Get to Heaven",
+        "False Prophet",
+        "I Can Tell (Bo Diddley cover)",
+        "Black Rider",
+        "Share Your Love With Me (Bobby \"Blue\" Bland cover)",
+        "When I Paint My Masterpiece",
+        "I'll Make It All Up to You (Jerry Lee Lewis cover)",
+        "Crossing the Rubicon",
+        "Soon After Midnight",
+        "Under the Red Sky",
+        "I've Made Up My Mind to Give Myself to You",
+        "Goodbye Jimmy Reed",
+        "I Shall Be Released"
+      ],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/bob-dylan/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-53766329.html"
+  },
+  {
+    "number": 31,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -724,7 +1168,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 19,
+    "number": 32,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -770,7 +1214,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 20,
+    "number": 33,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -816,7 +1260,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 21,
+    "number": 34,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -860,7 +1304,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 22,
+    "number": 35,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -906,7 +1350,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 23,
+    "number": 36,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
