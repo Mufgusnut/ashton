@@ -314,33 +314,6 @@
   },
   {
     "number": 9,
-    "slug": "thundercat-td-garden-boston",
-    "band": "Thundercat",
-    "showTitle": "Opening for The Strokes",
-    "venue": "TD Garden",
-    "city": "Boston, MA",
-    "date": "2026-06-23",
-    "photo": "assets/img/concerts/thundercat-boston.svg",
-    "photos": [],
-    "guestList": [],
-    "setlist": {
-      "set1": [
-        "Children of the Baked Potato",
-        "Candlelight",
-        "No More Lies",
-        "I Wish I Didn't Waste Your Time",
-        "Walking on the Moon",
-        "Anakin Learns His Fate",
-        "Funny Thing",
-        "Them Changes"
-      ],
-      "set2": [],
-      "encore": []
-    },
-    "setlistSource": "https://www.setlist.fm/setlist/thundercat/2026/td-garden-boston-ma-3b7670c0.html"
-  },
-  {
-    "number": 10,
     "slug": "the-strokes-td-garden-boston",
     "band": "The Strokes",
     "venue": "TD Garden",
@@ -386,7 +359,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/the-strokes/2026/td-garden-boston-ma-7b767690.html"
   },
   {
-    "number": 11,
+    "number": 10,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -428,7 +401,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 12,
+    "number": 11,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -474,7 +447,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 13,
+    "number": 12,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -520,7 +493,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 14,
+    "number": 13,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -564,7 +537,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 15,
+    "number": 14,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -610,7 +583,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 16,
+    "number": 15,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
