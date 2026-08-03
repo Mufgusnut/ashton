@@ -10,8 +10,27 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Hillbillies on PCP (Steve Kimock cover)", "My Sisters and Brothers (In Christ) (The Sensational Nightingales cover)", "Way We Rise", "Sitting in Limbo (Jimmy Cliff cover)", "Hush", "Rubin and Cherise (Jerry Garcia Band cover)", "Mother's Song (John Kimock cover)", "That's What Love Will Make You Do (Little Milton cover)"],
-      "set2": ["Cats Under the Stars (Jerry Garcia Band cover)", "Love and War", "The Offing (unreleased)", "Run for the Roses (Jerry Garcia cover)", "Gambler's Conceit (Jason Crosby cover)", "Turn On Your Love Light (Bobby \"Blue\" Bland cover)", "Every Hungry Woman (The Allman Brothers Band cover)", "Standing on the Moon (Grateful Dead cover)", "Mighty High (Mighty Clouds of Joy cover)"],
+      "set1": [
+        "Hillbillies on PCP (Steve Kimock cover)",
+        "My Sisters and Brothers (In Christ) (The Sensational Nightingales cover)",
+        "Way We Rise",
+        "Sitting in Limbo (Jimmy Cliff cover)",
+        "Hush",
+        "Rubin and Cherise (Jerry Garcia Band cover)",
+        "Mother's Song (John Kimock cover)",
+        "That's What Love Will Make You Do (Little Milton cover)"
+      ],
+      "set2": [
+        "Cats Under the Stars (Jerry Garcia Band cover)",
+        "Love and War",
+        "The Offing (unreleased)",
+        "Run for the Roses (Jerry Garcia cover)",
+        "Gambler's Conceit (Jason Crosby cover)",
+        "Turn On Your Love Light (Bobby \"Blue\" Bland cover)",
+        "Every Hungry Woman (The Allman Brothers Band cover)",
+        "Standing on the Moon (Grateful Dead cover)",
+        "Mighty High (Mighty Clouds of Joy cover)"
+      ],
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/oteil-and-friends/2025/waterville-opera-house-waterville-me-3341e885.html"
@@ -27,9 +46,38 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["I'm One of Those", "Age (Jim Croce cover)", "St. Louis Blues (W.C. Handy's Memphis Blues Band cover)", "It Ain't Before", "Hellbender", "Escanaba", "Highway Hypnosis", "Show Me the Door", "Little Maggie (traditional)", "Harbor of Love (The Stanley Brothers cover)", "Red Daisy", "Libby Phillips Rag (Jarrod Walker cover)", "End of the Rainbow (Frank Wakefield cover)"],
-      "set2": ["Leadfoot", "Don't Be Calling Me (At 4am)", "Seney Stretch", "Sally Johnson (traditional)", "Love and Regret", "Dust in a Baggie (Billy Strings & Don Julin song)", "Leaders", "Planet Caravan (Black Sabbath cover)", "Spinning", "So Many Miles (Billy Failing cover)", "Everything's the Same"],
-      "encore": ["With a Vamp in the Middle (John Hartford cover)", "This Heart of Mine (New Grass Revival cover)"]
+      "set1": [
+        "I'm One of Those",
+        "Age (Jim Croce cover)",
+        "St. Louis Blues (W.C. Handy's Memphis Blues Band cover)",
+        "It Ain't Before",
+        "Hellbender",
+        "Escanaba",
+        "Highway Hypnosis",
+        "Show Me the Door",
+        "Little Maggie (traditional)",
+        "Harbor of Love (The Stanley Brothers cover)",
+        "Red Daisy",
+        "Libby Phillips Rag (Jarrod Walker cover)",
+        "End of the Rainbow (Frank Wakefield cover)"
+      ],
+      "set2": [
+        "Leadfoot",
+        "Don't Be Calling Me (At 4am)",
+        "Seney Stretch",
+        "Sally Johnson (traditional)",
+        "Love and Regret",
+        "Dust in a Baggie (Billy Strings & Don Julin song)",
+        "Leaders",
+        "Planet Caravan (Black Sabbath cover)",
+        "Spinning",
+        "So Many Miles (Billy Failing cover)",
+        "Everything's the Same"
+      ],
+      "encore": [
+        "With a Vamp in the Middle (John Hartford cover)",
+        "This Heart of Mine (New Grass Revival cover)"
+      ]
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/prudential-center-newark-nj-4b478f16.html"
   },
@@ -45,9 +93,34 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Next", "Silent Night (John Freeman Young cover)", "Sleigh Ride (Leroy Anderson & His Pops Orchestra cover, with Sierra Hull)", "Christmas Time Is Here (Vince Guaraldi Trio cover)", "Linus and Lucy (Vince Guaraldi Trio cover)", "Victor Wooten Solo", "Scratch & Sniff", "The Twelve Days of Christmas (traditional cover, with Sierra Hull)", "Jingle Bells (James Lord Pierpont cover, Béla & Ayan-ool duet)", "Jingle Bells (with Alash and Sierra Hull)"],
-      "set2": ["Sleeper", "Christmas Medley", "Chagytai (Alash cover, Alash Ensemble only)", "Ediski deg Boostaamny (Alash Ensemble cover)", "Béla Solo", "Have Yourself a Merry Little Christmas (Hugh Martin cover, with Abigail Washburn)", "What Child Is This / Dyngyldai (with Alash and Sierra Hull)", "Flight of the Cosmic Hippo (with Sierra Hull)", "I Want a Hippopotamus for Christmas (Gayla Peevey cover, with Sierra Hull)", "Stomping Grounds (with Sierra Hull)"],
-      "encore": ["Ah Sho Dekio (traditional cover, with Alash and Sierra Hull)", "Shanti (with Alash and Sierra Hull)"]
+      "set1": [
+        "Next",
+        "Silent Night (John Freeman Young cover)",
+        "Sleigh Ride (Leroy Anderson & His Pops Orchestra cover, with Sierra Hull)",
+        "Christmas Time Is Here (Vince Guaraldi Trio cover)",
+        "Linus and Lucy (Vince Guaraldi Trio cover)",
+        "Victor Wooten Solo",
+        "Scratch & Sniff",
+        "The Twelve Days of Christmas (traditional cover, with Sierra Hull)",
+        "Jingle Bells (James Lord Pierpont cover, Béla & Ayan-ool duet)",
+        "Jingle Bells (with Alash and Sierra Hull)"
+      ],
+      "set2": [
+        "Sleeper",
+        "Christmas Medley",
+        "Chagytai (Alash cover, Alash Ensemble only)",
+        "Ediski deg Boostaamny (Alash Ensemble cover)",
+        "Béla Solo",
+        "Have Yourself a Merry Little Christmas (Hugh Martin cover, with Abigail Washburn)",
+        "What Child Is This / Dyngyldai (with Alash and Sierra Hull)",
+        "Flight of the Cosmic Hippo (with Sierra Hull)",
+        "I Want a Hippopotamus for Christmas (Gayla Peevey cover, with Sierra Hull)",
+        "Stomping Grounds (with Sierra Hull)"
+      ],
+      "encore": [
+        "Ah Sho Dekio (traditional cover, with Alash and Sierra Hull)",
+        "Shanti (with Alash and Sierra Hull)"
+      ]
     },
     "setlistSource": "https://www.setlist.fm/setlist/bela-fleck-and-the-flecktones/2025/beacon-theatre-new-york-ny-3b42a0a4.html",
     "setlistNote": "No setlist has been documented for this exact show. This is the setlist from the Beacon Theatre, NYC stop of the same Jingle All the Way tour on 12/10/2025 — a close approximation, not necessarily what was played in Portland."
@@ -64,9 +137,29 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Dramophone (Caravan Palace cover)", "Creatures", "Atlas Dogs", "Red Bird", "Silver Rising", "Bear (The Shouting Matches cover)", "Moby", "Pigs (Three Different Ones) (Pink Floyd cover)", "Animal"],
-      "set2": ["So Ready", "Arrow", "Burn the Witch (Radiohead cover)", "Madhuvan", "Dripfield"],
-      "encore": ["Jed Stone", "Master & a Hound (Gregory Alan Isakov cover)", "Sugar Mountain (Neil Young cover)"]
+      "set1": [
+        "Dramophone (Caravan Palace cover)",
+        "Creatures",
+        "Atlas Dogs",
+        "Red Bird",
+        "Silver Rising",
+        "Bear (The Shouting Matches cover)",
+        "Moby",
+        "Pigs (Three Different Ones) (Pink Floyd cover)",
+        "Animal"
+      ],
+      "set2": [
+        "So Ready",
+        "Arrow",
+        "Burn the Witch (Radiohead cover)",
+        "Madhuvan",
+        "Dripfield"
+      ],
+      "encore": [
+        "Jed Stone",
+        "Master & a Hound (Gregory Alan Isakov cover)",
+        "Sugar Mountain (Neil Young cover)"
+      ]
     },
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
   },
@@ -82,9 +175,30 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Wild Mountain Thyme (Francis McPeake cover)", "Give It Time", "Flodown", "Echo of a Rose", "Into the Myst", "Strange Overtones (Brian Eno & David Byrne cover)", "Strange Overtonez", "Wysteria Lane", "(dawn)"],
-      "set2": ["Life Is a Carnival (The Band cover)", "Thatch", "Big Modern!", "Hot Tea", "Marb House", "Factory Fiction"],
-      "encore": ["Dramophone (Caravan Palace cover)", "The Empress of Organos", "The Empress of Organos Reprise"]
+      "set1": [
+        "Wild Mountain Thyme (Francis McPeake cover)",
+        "Give It Time",
+        "Flodown",
+        "Echo of a Rose",
+        "Into the Myst",
+        "Strange Overtones (Brian Eno & David Byrne cover)",
+        "Strange Overtonez",
+        "Wysteria Lane",
+        "(dawn)"
+      ],
+      "set2": [
+        "Life Is a Carnival (The Band cover)",
+        "Thatch",
+        "Big Modern!",
+        "Hot Tea",
+        "Marb House",
+        "Factory Fiction"
+      ],
+      "encore": [
+        "Dramophone (Caravan Palace cover)",
+        "The Empress of Organos",
+        "The Empress of Organos Reprise"
+      ]
     },
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
   },
@@ -99,9 +213,29 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Porcupine", "Whoopie", "Day in Time", "Right Track", "Hedwig's Theme (John Williams cover)", "Avalanche", "Backslide", "Fun in Funk"],
-      "set2": ["Move Like That", "Twitch", "Distant Times", "Shine on You Crazy Diamond (Pink Floyd cover)", "Rocket Man (I Think It's Going to Be a Long, Long Time) (Elton John cover)", "Horizon", "Blue Light", "King Kong"],
-      "encore": ["Ocean Flows"]
+      "set1": [
+        "Porcupine",
+        "Whoopie",
+        "Day in Time",
+        "Right Track",
+        "Hedwig's Theme (John Williams cover)",
+        "Avalanche",
+        "Backslide",
+        "Fun in Funk"
+      ],
+      "set2": [
+        "Move Like That",
+        "Twitch",
+        "Distant Times",
+        "Shine on You Crazy Diamond (Pink Floyd cover)",
+        "Rocket Man (I Think It's Going to Be a Long, Long Time) (Elton John cover)",
+        "Horizon",
+        "Blue Light",
+        "King Kong"
+      ],
+      "encore": [
+        "Ocean Flows"
+      ]
     },
     "setlistSource": "https://www.setlist.fm/setlist/pigeons-playing-ping-pong/2026/state-theatre-portland-me-7b4cd224.html"
   },
@@ -116,14 +250,67 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Smile", "Silver Steed (My Blue)", "Come Up Slow", "Shallow Rivers", "Bad Side Of The Moon", "I Pray", "Bad Side Of The Moon (reprise)", "Boom or Bust"],
-      "set2": ["Woah There", "Thorns", "Woah There (reprise)", "All Wheels Turnin'", "Finding and Losing", "All Wheels Turnin' (reprise)", "Finding and Losing (reprise)"],
-      "encore": ["12 Pounds of Pain"]
+      "set1": [
+        "Smile",
+        "Silver Steed (My Blue)",
+        "Come Up Slow",
+        "Shallow Rivers",
+        "Bad Side Of The Moon",
+        "I Pray",
+        "Bad Side Of The Moon (reprise)",
+        "Boom or Bust"
+      ],
+      "set2": [
+        "Woah There",
+        "Thorns",
+        "Woah There (reprise)",
+        "All Wheels Turnin'",
+        "Finding and Losing",
+        "All Wheels Turnin' (reprise)",
+        "Finding and Losing (reprise)"
+      ],
+      "encore": [
+        "12 Pounds of Pain"
+      ]
     },
     "setlistSource": "https://thecarton.net/setlists/eggy-may-14-2026-3s-artspace-portsmouth-nh-usa.html"
   },
   {
     "number": 8,
+    "slug": "primus-thompsons-point-portland",
+    "band": "Primus",
+    "venue": "Thompson's Point",
+    "city": "Portland, ME",
+    "date": "2026-06-09",
+    "photo": "assets/img/concerts/primus-portland.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": ["Les Claypool's Fearless Flying Frog Brigade", "The Claypool Lennon Delirium"],
+    "setlist": {
+      "set1": [
+        "What Is Primus? (played from tape)",
+        "Clown Dream (Danny Elfman cover, played from tape, with Puddles Pity Party video)",
+        "Harold of the Rocks",
+        "Dirty Drowning Man",
+        "American Life",
+        "The Ol' Grizz",
+        "Jilly's on Smack",
+        "Over the Falls",
+        "Bob's Party Time Lounge",
+        "The Ol' Diamondback Sturgeon (Fisherman's Chronicles, Part 3) (with Skerik and Mike D)",
+        "Welcome to This World (Partial)",
+        "Jerry Was a Race Car Driver"
+      ],
+      "set2": [],
+      "encore": [
+        "Too Many Puppies",
+        "Southbound Pachyderm (with The Les Claypool Frog Brigade)"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/primus/2026/thompsons-point-portland-me-534a0b09.html"
+  },
+  {
+    "number": 9,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -133,14 +320,39 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Leaning on a Travelin' Song", "Lumpy, Beanpole & Dirt (Bad Livers cover)", "Sally Goodin (traditional)", "Must Be Seven", "While I'm Waiting Here", "Living Like an Animal", "Half A Heart", "All Fall Down (John Hartford cover)", "Love Like Me", "Out on the Ocean (The Kentuckians cover)", "Sophronie (Jimmy Martin cover)"],
-      "set2": ["Wargasm", "Oh the Wind and Rain (traditional)", "West Dakota Rose (Chris Henry cover)", "Watch It Fall", "Take Me Out to the Ball Game (Harvey Hindermyer cover)", "The Fire on My Tongue", "Ridin' That Midnight Train (The Stanley Brothers cover)", "Freedom", "I Only Exist (The Stanley Brothers cover)", "Richard Petty", "Walk On, Boy (Mel Tillis cover)", "Meet Me at the Creek"],
+      "set1": [
+        "Leaning on a Travelin' Song",
+        "Lumpy, Beanpole & Dirt (Bad Livers cover)",
+        "Sally Goodin (traditional)",
+        "Must Be Seven",
+        "While I'm Waiting Here",
+        "Living Like an Animal",
+        "Half A Heart",
+        "All Fall Down (John Hartford cover)",
+        "Love Like Me",
+        "Out on the Ocean (The Kentuckians cover)",
+        "Sophronie (Jimmy Martin cover)"
+      ],
+      "set2": [
+        "Wargasm",
+        "Oh the Wind and Rain (traditional)",
+        "West Dakota Rose (Chris Henry cover)",
+        "Watch It Fall",
+        "Take Me Out to the Ball Game (Harvey Hindermyer cover)",
+        "The Fire on My Tongue",
+        "Ridin' That Midnight Train (The Stanley Brothers cover)",
+        "Freedom",
+        "I Only Exist (The Stanley Brothers cover)",
+        "Richard Petty",
+        "Walk On, Boy (Mel Tillis cover)",
+        "Meet Me at the Creek"
+      ],
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 9,
+    "number": 10,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -151,14 +363,42 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Shenandoah Breakdown", "Know It All", "Love Among the Tombstones", "Harbor of Love", "Libby Phillips Rag", "Freeborn Man", "Show Me the Door", "California Sober", "Nothing's Working", "Pyramid Country", "Train, Train"],
-      "set2": ["Fire Line", "Thirst Mutilator", "On and On", "Love Like Me", "Whisper My Name", "Happy Hollow", "Broken Doe", "Long Forgotten Dream", "The Old Mountaineer", "Miss the Mississippi and You", "Wait a Minute", "Katy Daley", "Leaders", "Red Rocking Chair", "Turmoil & Tinfoil"],
+      "set1": [
+        "Shenandoah Breakdown",
+        "Know It All",
+        "Love Among the Tombstones",
+        "Harbor of Love",
+        "Libby Phillips Rag",
+        "Freeborn Man",
+        "Show Me the Door",
+        "California Sober",
+        "Nothing's Working",
+        "Pyramid Country",
+        "Train, Train"
+      ],
+      "set2": [
+        "Fire Line",
+        "Thirst Mutilator",
+        "On and On",
+        "Love Like Me",
+        "Whisper My Name",
+        "Happy Hollow",
+        "Broken Doe",
+        "Long Forgotten Dream",
+        "The Old Mountaineer",
+        "Miss the Mississippi and You",
+        "Wait a Minute",
+        "Katy Daley",
+        "Leaders",
+        "Red Rocking Chair",
+        "Turmoil & Tinfoil"
+      ],
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 10,
+    "number": 11,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -169,14 +409,42 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Gone a Long Time", "Old Train (The Seldom Scene cover)", "Heartbeat of America", "In the Morning Light", "Dusty Miller (traditional)", "New Country Blues (Emmitt-Nershi Band cover)", "My Alice", "Tennessee Stud (Jimmy Driftwood cover)", "Burn the Other End", "Drifting With the Tide (traditional)", "In the Clear", "Just Because (Nelstone's Hawaiians cover)"],
-      "set2": ["I'm One of Those", "Age (Jim Croce cover)", "Seven Weeks in County", "This Old World", "Nashville Pickin' (Doc Watson cover)", "I'm a Natural Born Gamblin' Man (Merle Travis cover)", "Away From the Mire", "Crossing Muddy Waters (John Hiatt cover)", "Hellbender", "Presbyterian Guitar (John Hartford cover)", "Hide and Seek", "And Your Bird Can Sing (The Beatles cover)", "Treasures Untold (Jimmie Rodgers cover)", "We Shall All Be Reunited (Patty Griffin cover)"],
+      "set1": [
+        "Gone a Long Time",
+        "Old Train (The Seldom Scene cover)",
+        "Heartbeat of America",
+        "In the Morning Light",
+        "Dusty Miller (traditional)",
+        "New Country Blues (Emmitt-Nershi Band cover)",
+        "My Alice",
+        "Tennessee Stud (Jimmy Driftwood cover)",
+        "Burn the Other End",
+        "Drifting With the Tide (traditional)",
+        "In the Clear",
+        "Just Because (Nelstone's Hawaiians cover)"
+      ],
+      "set2": [
+        "I'm One of Those",
+        "Age (Jim Croce cover)",
+        "Seven Weeks in County",
+        "This Old World",
+        "Nashville Pickin' (Doc Watson cover)",
+        "I'm a Natural Born Gamblin' Man (Merle Travis cover)",
+        "Away From the Mire",
+        "Crossing Muddy Waters (John Hiatt cover)",
+        "Hellbender",
+        "Presbyterian Guitar (John Hartford cover)",
+        "Hide and Seek",
+        "And Your Bird Can Sing (The Beatles cover)",
+        "Treasures Untold (Jimmie Rodgers cover)",
+        "We Shall All Be Reunited (Patty Griffin cover)"
+      ],
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 11,
+    "number": 12,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -185,16 +453,42 @@
     "photo": "assets/img/concerts/ella-langley-gilford.svg",
     "photos": [],
     "guestList": [],
-    "supportActs": ["Kameron Marlowe", "Laci Kaye Booth"],
+    "supportActs": [
+      "Kameron Marlowe",
+      "Laci Kaye Booth"
+    ],
     "setlist": {
-      "set1": ["Hell At Night (intro, played from tape)", "Froggy Went a Courtin' (intro, played from tape)", "Dandelion", "I Gotta Quit", "Bottom of Your Boots", "Here for the Party (Gretchen Wilson cover)", "girl you're taking home", "20-20", "You & Me Time", "Last Call for Us", "Country Boy's Dream Girl", "That's Why We Fight", "Broken", "Strangers (Kameron Marlowe cover, with Kameron Marlowe)", "Somethin' Simple", "Butterfly Season", "Dreams (Fleetwood Mac cover, with Laci Kaye Booth)", "Be Her", "you look like you love me", "Loving Life Again", "Choosin' Texas", "weren't for the wind"],
+      "set1": [
+        "Hell At Night (intro, played from tape)",
+        "Froggy Went a Courtin' (intro, played from tape)",
+        "Dandelion",
+        "I Gotta Quit",
+        "Bottom of Your Boots",
+        "Here for the Party (Gretchen Wilson cover)",
+        "girl you're taking home",
+        "20-20",
+        "You & Me Time",
+        "Last Call for Us",
+        "Country Boy's Dream Girl",
+        "That's Why We Fight",
+        "Broken",
+        "Strangers (Kameron Marlowe cover, with Kameron Marlowe)",
+        "Somethin' Simple",
+        "Butterfly Season",
+        "Dreams (Fleetwood Mac cover, with Laci Kaye Booth)",
+        "Be Her",
+        "you look like you love me",
+        "Loving Life Again",
+        "Choosin' Texas",
+        "weren't for the wind"
+      ],
       "set2": [],
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 12,
+    "number": 13,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -205,14 +499,42 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["The Fire on My Tongue", "Must Be Seven", "While I'm Waiting Here", "15 Steps (Jeff Austin cover)", "Bronzeback", "Air Mail Special on the Fly (Leon Rusk cover)", "Stratosphere Blues / I Believe in You", "End of the Rainbow (Frank Wakefield cover)", "Dawg's Rag (The David Grisman Quintet cover)", "Mill Town Flood", "On the Line", "Train 45 (traditional)"],
-      "set2": ["Red Daisy", "Don't Be Calling Me (At 4am)", "Seney Stretch", "Crown of Thorns (Mother Love Bone cover)", "Wargasm", "Uncle Pen (Bill Monroe and the Bluegrass Boys cover)", "How Long Have I Been Waiting for You (Jonathan Edwards and The Seldom Scene cover)", "If Your Hair's Too Long (There's Sin in Your Heart) (traditional)", "Richard Petty", "Leaning on a Travelin' Song", "Ashland Breakdown (Bill Monroe cover)", "There Is a Time (The Dillards cover)", "My Love Come Rolling Down (Eric Von Schmidt cover)", "Meet Me at the Creek"],
+      "set1": [
+        "The Fire on My Tongue",
+        "Must Be Seven",
+        "While I'm Waiting Here",
+        "15 Steps (Jeff Austin cover)",
+        "Bronzeback",
+        "Air Mail Special on the Fly (Leon Rusk cover)",
+        "Stratosphere Blues / I Believe in You",
+        "End of the Rainbow (Frank Wakefield cover)",
+        "Dawg's Rag (The David Grisman Quintet cover)",
+        "Mill Town Flood",
+        "On the Line",
+        "Train 45 (traditional)"
+      ],
+      "set2": [
+        "Red Daisy",
+        "Don't Be Calling Me (At 4am)",
+        "Seney Stretch",
+        "Crown of Thorns (Mother Love Bone cover)",
+        "Wargasm",
+        "Uncle Pen (Bill Monroe and the Bluegrass Boys cover)",
+        "How Long Have I Been Waiting for You (Jonathan Edwards and The Seldom Scene cover)",
+        "If Your Hair's Too Long (There's Sin in Your Heart) (traditional)",
+        "Richard Petty",
+        "Leaning on a Travelin' Song",
+        "Ashland Breakdown (Bill Monroe cover)",
+        "There Is a Time (The Dillards cover)",
+        "My Love Come Rolling Down (Eric Von Schmidt cover)",
+        "Meet Me at the Creek"
+      ],
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 13,
+    "number": 14,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
@@ -223,8 +545,30 @@
     "photos": [],
     "guestList": [],
     "setlist": {
-      "set1": ["Hello City Limits (Harley \"Red\" Allen cover)", "Happy Hollow", "Pyramid Country", "Secrets", "Doin' Things Right", "Everything's the Same", "Arabia (Jerry Garcia & David Grisman cover)"],
-      "set2": ["Rosa Lee McFall (Charlie Monroe cover)", "Night Fishing", "Long Forgotten Dream", "Fire Line", "Ice Bridges", "Make Me a Pallet on the Floor (traditional)", "Love Like Me", "Broken Doe", "Hollow Heart", "Love or Confusion (The Jimi Hendrix Experience cover)", "So Many Miles (Billy Failing cover)", "Nights in White Satin (The Moody Blues cover)", "Turmoil & Tinfoil"],
+      "set1": [
+        "Hello City Limits (Harley \"Red\" Allen cover)",
+        "Happy Hollow",
+        "Pyramid Country",
+        "Secrets",
+        "Doin' Things Right",
+        "Everything's the Same",
+        "Arabia (Jerry Garcia & David Grisman cover)"
+      ],
+      "set2": [
+        "Rosa Lee McFall (Charlie Monroe cover)",
+        "Night Fishing",
+        "Long Forgotten Dream",
+        "Fire Line",
+        "Ice Bridges",
+        "Make Me a Pallet on the Floor (traditional)",
+        "Love Like Me",
+        "Broken Doe",
+        "Hollow Heart",
+        "Love or Confusion (The Jimi Hendrix Experience cover)",
+        "So Many Miles (Billy Failing cover)",
+        "Nights in White Satin (The Moody Blues cover)",
+        "Turmoil & Tinfoil"
+      ],
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-5b4a4f58.html"
