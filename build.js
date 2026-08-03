@@ -348,11 +348,11 @@ function renderConcertPage(concert, prev, next) {
 
   ${concert.notes ? `<section class="wrap notes"><h2>Notes</h2><p>${escapeHtml(concert.notes)}</p></section>` : ''}
 
-  ${renderGallery(concert)}
+  ${renderSetlist(concert)}
 
   ${renderGuestList(concert)}
 
-  ${renderSetlist(concert)}
+  ${renderGallery(concert)}
 
   <div class="wrap">
     <div class="concert-nav">
