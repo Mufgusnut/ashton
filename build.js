@@ -282,23 +282,25 @@ function renderGallery(concert) {
 
 function renderGuestList(concert) {
   const guests = concert.guestList || [];
-  if (!guests.length) {
-    return `<section class="wrap guest-list-section">
-    <div class="section-head"><h2>Guest List</h2></div>
-    <div class="guest-list-empty">Who came along for this one? Add names under <code>guestList</code> for this show in <code>data/concerts.json</code>.</div>
-  </section>`;
-  }
 
   const chips = guests.map((name) => `<span class="guest-chip">${escapeHtml(name)}</span>`).join('\n      ');
 
   return `<section class="wrap guest-list-section">
     <div class="section-head">
       <h2>Guest List</h2>
-      <span class="sub">${guests.length} on the list</span>
+      <span class="sub" id="guest-count"></span>
     </div>
-    <div class="guest-list">
+    <div class="guest-list" id="guest-list">
       ${chips}
     </div>
+    <div class="guest-list-empty" id="guest-list-empty" ${guests.length ? 'style="display:none"' : ''}>
+      No one on the list yet &mdash; add your name below.
+    </div>
+    <form class="guest-form" id="guest-form" data-slug="${escapeHtml(concert.slug)}" data-api-base="${escapeHtml(config.photosApiBase)}">
+      <input type="text" id="guest-name-input" name="name" placeholder="Your name" maxlength="60" autocomplete="name">
+      <button type="submit" class="guest-submit">Add me</button>
+    </form>
+    <div class="guest-form-status" id="guest-form-status"></div>
   </section>`;
 }
 
@@ -370,7 +372,8 @@ function renderConcertPage(concert, prev, next) {
     `${concert.band} at ${concert.venue}, ${concert.city} on ${fmtDate(concert.date)}.`,
     '../',
     body,
-    `<script src="../assets/js/gallery.js"></script>`,
+    `<script src="../assets/js/gallery.js"></script>
+    <script src="../assets/js/guestlist.js"></script>`,
   );
 }
 

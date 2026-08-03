@@ -1,17 +1,26 @@
 /*
- * Photo upload API for the "40 Before 40" concert site.
+ * Photo + guest-list API for the "40 Before 40" concert site.
  * - GET  /api/concerts/:slug/photos   -> list photos for a show
  * - POST /api/concerts/:slug/photos   -> upload a photo (multipart: file, caption?)
+ * - GET  /api/concerts/:slug/guests   -> list guests for a show, each with their
+ *                                        running total of shows attended with Ashton
+ * - POST /api/concerts/:slug/guests   -> add a name to a show's guest list (json: {name})
  *
- * Storage: R2 (binary files) + KV (per-show JSON list of {key, caption, uploadedAt}).
- * Public reads of the images themselves happen directly against the R2 custom
- * domain (MEDIA_BASE_URL), not through this Worker.
+ * Storage:
+ * - R2: binary photo files, served publicly & directly at MEDIA_BASE_URL (not via this Worker).
+ * - KV `photos:{slug}`        -> JSON array of {key, caption, uploadedAt}
+ * - KV `guests:{slug}`        -> JSON array of display names on that show's guest list
+ * - KV `guesttotal:{normalized-name}` -> JSON {name, count} — count of distinct shows
+ *   that person has been added to, across the whole site.
  */
 
 const SLUG_RE = /^[a-z0-9-]{1,80}$/;
 const MAX_FILE_BYTES = 8 * 1024 * 1024; // 8MB
 const MAX_PHOTOS_PER_SHOW = 100;
-const RATE_LIMIT_PER_HOUR = 20;
+const MAX_GUESTS_PER_SHOW = 200;
+const MAX_NAME_LENGTH = 60;
+const UPLOAD_RATE_LIMIT_PER_HOUR = 20;
+const GUEST_RATE_LIMIT_PER_HOUR = 30;
 
 const ALLOWED_TYPES = {
   'image/jpeg': 'jpg',
@@ -41,8 +50,21 @@ function json(data, status, extraHeaders) {
   });
 }
 
+async function rateLimitOk(env, bucket, ip, limit) {
+  const hourBucket = new Date().toISOString().slice(0, 13); // YYYY-MM-DDTHH
+  const key = `rl:${bucket}:${ip}:${hourBucket}`;
+  const current = parseInt((await env.PHOTOS_KV.get(key)) || '0', 10);
+  if (current >= limit) return false;
+  await env.PHOTOS_KV.put(key, String(current + 1), { expirationTtl: 3700 });
+  return true;
+}
+
+// ---------------------------------------------------------------------
+// photos
+// ---------------------------------------------------------------------
+
 async function listPhotos(slug, env, cors) {
-  const raw = await env.PHOTOS_KV.get(`show:${slug}`);
+  const raw = await env.PHOTOS_KV.get(`photos:${slug}`);
   const photos = raw ? JSON.parse(raw) : [];
   const withUrls = photos.map((p) => ({
     src: `${env.MEDIA_BASE_URL}/${p.key}`,
@@ -52,18 +74,9 @@ async function listPhotos(slug, env, cors) {
   return json({ photos: withUrls }, 200, cors);
 }
 
-async function rateLimitOk(ip, env) {
-  const hourBucket = new Date().toISOString().slice(0, 13); // YYYY-MM-DDTHH
-  const key = `rl:${ip}:${hourBucket}`;
-  const current = parseInt((await env.PHOTOS_KV.get(key)) || '0', 10);
-  if (current >= RATE_LIMIT_PER_HOUR) return false;
-  await env.PHOTOS_KV.put(key, String(current + 1), { expirationTtl: 3700 });
-  return true;
-}
-
 async function uploadPhoto(slug, request, env, cors) {
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  if (!(await rateLimitOk(ip, env))) {
+  if (!(await rateLimitOk(env, 'upload', ip, UPLOAD_RATE_LIMIT_PER_HOUR))) {
     return json({ error: 'Too many uploads from this network in the last hour. Try again later.' }, 429, cors);
   }
 
@@ -87,7 +100,7 @@ async function uploadPhoto(slug, request, env, cors) {
     return json({ error: 'Photo is too large (8MB max).' }, 413, cors);
   }
 
-  const listKey = `show:${slug}`;
+  const listKey = `photos:${slug}`;
   const raw = await env.PHOTOS_KV.get(listKey);
   const photos = raw ? JSON.parse(raw) : [];
   if (photos.length >= MAX_PHOTOS_PER_SHOW) {
@@ -112,6 +125,80 @@ async function uploadPhoto(slug, request, env, cors) {
   }, 201, cors);
 }
 
+// ---------------------------------------------------------------------
+// guests
+// ---------------------------------------------------------------------
+
+function normalizeName(name) {
+  return name.trim().replace(/\s+/g, ' ');
+}
+
+async function getGuestTotal(env, normalized) {
+  const raw = await env.PHOTOS_KV.get(`guesttotal:${normalized}`);
+  return raw ? JSON.parse(raw) : null;
+}
+
+async function listGuests(slug, env, cors) {
+  const raw = await env.PHOTOS_KV.get(`guests:${slug}`);
+  const names = raw ? JSON.parse(raw) : [];
+  const guests = await Promise.all(names.map(async (name) => {
+    const total = await getGuestTotal(env, name.toLowerCase());
+    return { name, total: total ? total.count : 1 };
+  }));
+  return json({ guests }, 200, cors);
+}
+
+async function addGuest(slug, request, env, cors) {
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (!(await rateLimitOk(env, 'guest', ip, GUEST_RATE_LIMIT_PER_HOUR))) {
+    return json({ error: 'Too many additions from this network in the last hour. Try again later.' }, 429, cors);
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Expected a JSON body with a name field.' }, 400, cors);
+  }
+
+  const name = normalizeName(String(body.name || ''));
+  if (!name) {
+    return json({ error: 'Name is required.' }, 400, cors);
+  }
+  if (name.length > MAX_NAME_LENGTH) {
+    return json({ error: `Name is too long (${MAX_NAME_LENGTH} characters max).` }, 400, cors);
+  }
+
+  const normalized = name.toLowerCase();
+  const listKey = `guests:${slug}`;
+  const raw = await env.PHOTOS_KV.get(listKey);
+  const names = raw ? JSON.parse(raw) : [];
+
+  const alreadyListed = names.some((n) => n.toLowerCase() === normalized);
+  if (alreadyListed) {
+    const total = await getGuestTotal(env, normalized);
+    return json({ name, total: total ? total.count : 1, alreadyListed: true }, 200, cors);
+  }
+
+  if (names.length >= MAX_GUESTS_PER_SHOW) {
+    return json({ error: 'This show already has the maximum number of guests.' }, 409, cors);
+  }
+
+  names.push(name);
+  await env.PHOTOS_KV.put(listKey, JSON.stringify(names));
+
+  const totalKey = `guesttotal:${normalized}`;
+  const existingTotal = await getGuestTotal(env, normalized);
+  const nextTotal = { name: existingTotal ? existingTotal.name : name, count: (existingTotal ? existingTotal.count : 0) + 1 };
+  await env.PHOTOS_KV.put(totalKey, JSON.stringify(nextTotal));
+
+  return json({ name, total: nextTotal.count, alreadyListed: false }, 201, cors);
+}
+
+// ---------------------------------------------------------------------
+// router
+// ---------------------------------------------------------------------
+
 export default {
   async fetch(request, env) {
     const cors = corsHeaders(request, env);
@@ -121,22 +208,24 @@ export default {
       return new Response(null, { status: 204, headers: cors });
     }
 
-    const match = url.pathname.match(/^\/api\/concerts\/([^/]+)\/photos\/?$/);
-    if (!match) {
-      return json({ error: 'Not found.' }, 404, cors);
+    const photosMatch = url.pathname.match(/^\/api\/concerts\/([^/]+)\/photos\/?$/);
+    if (photosMatch) {
+      const slug = photosMatch[1];
+      if (!SLUG_RE.test(slug)) return json({ error: 'Invalid show identifier.' }, 400, cors);
+      if (request.method === 'GET') return listPhotos(slug, env, cors);
+      if (request.method === 'POST') return uploadPhoto(slug, request, env, cors);
+      return json({ error: 'Method not allowed.' }, 405, cors);
     }
 
-    const slug = match[1];
-    if (!SLUG_RE.test(slug)) {
-      return json({ error: 'Invalid show identifier.' }, 400, cors);
+    const guestsMatch = url.pathname.match(/^\/api\/concerts\/([^/]+)\/guests\/?$/);
+    if (guestsMatch) {
+      const slug = guestsMatch[1];
+      if (!SLUG_RE.test(slug)) return json({ error: 'Invalid show identifier.' }, 400, cors);
+      if (request.method === 'GET') return listGuests(slug, env, cors);
+      if (request.method === 'POST') return addGuest(slug, request, env, cors);
+      return json({ error: 'Method not allowed.' }, 405, cors);
     }
 
-    if (request.method === 'GET') {
-      return listPhotos(slug, env, cors);
-    }
-    if (request.method === 'POST') {
-      return uploadPhoto(slug, request, env, cors);
-    }
-    return json({ error: 'Method not allowed.' }, 405, cors);
+    return json({ error: 'Not found.' }, 404, cors);
   },
 };

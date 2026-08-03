@@ -90,8 +90,21 @@
   </section>
 
   <section class="wrap guest-list-section">
-    <div class="section-head"><h2>Guest List</h2></div>
-    <div class="guest-list-empty">Who came along for this one? Add names under <code>guestList</code> for this show in <code>data/concerts.json</code>.</div>
+    <div class="section-head">
+      <h2>Guest List</h2>
+      <span class="sub" id="guest-count"></span>
+    </div>
+    <div class="guest-list" id="guest-list">
+      
+    </div>
+    <div class="guest-list-empty" id="guest-list-empty" >
+      No one on the list yet &mdash; add your name below.
+    </div>
+    <form class="guest-form" id="guest-form" data-slug="goosemas-xii-night-one-providence" data-api-base="https://ashton-api.cuzbro.net">
+      <input type="text" id="guest-name-input" name="name" placeholder="Your name" maxlength="60" autocomplete="name">
+      <button type="submit" class="guest-submit">Add me</button>
+    </form>
+    <div class="guest-form-status" id="guest-form-status"></div>
   </section>
 
   <section class="wrap setlist-section">
@@ -154,5 +167,6 @@
     </div>
   </footer>
   <script src="../assets/js/gallery.js"></script>
+    <script src="../assets/js/guestlist.js"></script>
 </body>
 </html>

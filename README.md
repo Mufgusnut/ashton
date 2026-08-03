@@ -49,9 +49,10 @@ files in `data/`, so adding a show never means hand-writing HTML.
      has a live drag-and-drop uploader (see "Photo uploads" below) that
      visitors can use to add more photos on their own, on top of whatever's
      in `photos`.
-   - `guestList` is who Ashton brought along — shown as a row of chips on
-     the concert page. Leave it as `[]` and the page shows a placeholder
-     prompting you to fill it in.
+   - `guestList` is an optional curated set of names baked in at build
+     time, same idea as `photos`. Every concert page also has a live
+     "Add me" box (see "Guest list" below) that anyone can use to add
+     themselves — that's the primary way names end up on the list.
    - `rating` is 1–5 (whole numbers) and drives the star display.
    - `showTitle`, `supportActs`, `price`, `highlight`, `notes`, `setlist`,
      and `setlistSource` are all optional — omit or leave empty and
@@ -122,12 +123,35 @@ Then also drop that entry from the show's list in KV — read it, edit out
 the entry, write it back:
 
 ```
-npx wrangler kv key get "show:<slug>" --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
-npx wrangler kv key put "show:<slug>" '<edited JSON array>' --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
+npx wrangler kv key get "photos:<slug>" --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
+npx wrangler kv key put "photos:<slug>" '<edited JSON array>' --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
 ```
 
-To change upload limits or validation, edit `worker/src/index.js` and
-redeploy:
+## Guest list
+
+Every concert page also has a live "Add me" box — anyone can type their
+name and add themselves to that show's guest list, no login required.
+The list is shared across the whole site: if the same name (matched
+case-insensitively) gets added to more than one show, a badge appears
+next to their name showing the running total of shows they've been added
+to, e.g. "3 shows". This uses the same Worker and KV namespace as photo
+uploads (`guests:<slug>` for each show's list, `guesttotal:<name>` for
+the per-person running total), rate-limited to ~30 additions/hour per IP.
+
+Because it's open to anyone, there's no public rename/delete endpoint.
+To fix a typo'd or unwanted name:
+
+```
+npx wrangler kv key get "guests:<slug>" --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
+npx wrangler kv key put "guests:<slug>" '<edited JSON array>' --namespace-id b2ab1b313530474badeb59b40fb318d6 --remote
+```
+
+Adjusting their total (or removing it entirely) means editing the
+matching `guesttotal:<lowercase-name>` key the same way — its value is
+`{"name": "...", "count": N}`.
+
+To change upload/guest limits or validation, edit `worker/src/index.js`
+and redeploy:
 
 ```
 cd worker
