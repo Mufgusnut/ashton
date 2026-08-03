@@ -55,6 +55,7 @@ function normalizeSongTitle(raw) {
 const totalShows = concerts.length;
 const goal = config.goal;
 const cities = new Set(concerts.map((c) => c.city));
+const states = new Set(concerts.map((c) => c.city.split(',').pop().trim()));
 const bands = new Set(concerts.map((c) => c.band));
 const setlistSongCount = (concert) => {
   if (!concert.setlist) return 0;
@@ -238,6 +239,7 @@ function renderIndex() {
         <div class="stat-block">
           <div class="num">${cities.size}</div>
           <div class="label">Cities</div>
+          <div class="substat">${states.size} state${states.size === 1 ? '' : 's'}</div>
         </div>
         <div class="stat-block">
           <div class="num">${totalSongs}</div>

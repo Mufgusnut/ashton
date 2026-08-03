@@ -264,6 +264,13 @@ img { max-width: 100%; display: block; }
   color: var(--ink-dim);
 }
 
+.stat-block .substat {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--ink-dim);
+  opacity: 0.75;
+}
+
 /* progress bar */
 
 .progress-track {
