@@ -90,6 +90,24 @@
   },
   {
     "number": 6,
+    "slug": "ella-langley-gilford",
+    "band": "Ella Langley",
+    "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
+    "city": "Gilford, NH",
+    "date": "2026-07-30",
+    "photo": "assets/img/concerts/ella-langley-gilford.svg",
+    "photos": [],
+    "guestList": [],
+    "supportActs": ["Kameron Marlowe", "Laci Kaye Booth"],
+    "setlist": {
+      "set1": ["Hell At Night (intro, played from tape)", "Froggy Went a Courtin' (intro, played from tape)", "Dandelion", "I Gotta Quit", "Bottom of Your Boots", "Here for the Party (Gretchen Wilson cover)", "girl you're taking home", "20-20", "You & Me Time", "Last Call for Us", "Country Boy's Dream Girl", "That's Why We Fight", "Broken", "Strangers (Kameron Marlowe cover, with Kameron Marlowe)", "Somethin' Simple", "Butterfly Season", "Dreams (Fleetwood Mac cover, with Laci Kaye Booth)", "Be Her", "you look like you love me", "Loving Life Again", "Choosin' Texas", "weren't for the wind"],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
+  },
+  {
+    "number": 7,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -107,7 +125,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 7,
+    "number": 8,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
