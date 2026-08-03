@@ -68,8 +68,8 @@ const songOccurrences = new Map();
 concerts.forEach((c) => {
   if (!c.setlist) return;
   const { set1 = [], set2 = [], encore = [] } = c.setlist;
-  [...set1, ...set2, ...encore].forEach((raw) => {
-    const title = normalizeSongTitle(raw);
+  const titlesThisShow = new Set([...set1, ...set2, ...encore].map(normalizeSongTitle));
+  titlesThisShow.forEach((title) => {
     if (!songOccurrences.has(title)) songOccurrences.set(title, []);
     songOccurrences.get(title).push({ band: c.band, date: c.date, slug: c.slug });
   });

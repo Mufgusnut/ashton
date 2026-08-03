@@ -738,6 +738,7 @@
     "number": 20,
     "slug": "eggy-3s-artspace-portsmouth",
     "band": "Eggy",
+    "showTitle": "Portsmouth, Night One",
     "venue": "3S Artspace",
     "city": "Portsmouth, NH",
     "date": "2026-05-14",
@@ -772,6 +773,48 @@
   },
   {
     "number": 21,
+    "slug": "eggy-3s-artspace-portsmouth-night-two",
+    "band": "Eggy",
+    "showTitle": "Portsmouth, Night Two",
+    "venue": "3S Artspace",
+    "city": "Portsmouth, NH",
+    "date": "2026-05-15",
+    "photo": "assets/img/concerts/eggy-portsmouth-2.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Must Come Down",
+        "Razi",
+        "One Stop Shop",
+        "Reflections",
+        "Hux",
+        "Watercolor Days",
+        "One Stop Shop",
+        "Watercolor Days",
+        "You Don't Know How It Feels (Tom Petty cover)",
+        "Through the Mist"
+      ],
+      "set2": [
+        "Shatter",
+        "Falsities and Fire",
+        "Tiny Miracles",
+        "Falsities and Fire",
+        "Parceled Serotonin",
+        "No Way Down (The Shins cover)",
+        "Paper Bed",
+        "Shatter",
+        "Tiny Miracles",
+        "Shatter"
+      ],
+      "encore": [
+        "Golden Gate Dancer"
+      ]
+    },
+    "setlistSource": "https://thecarton.net/setlists/eggy-may-15-2026-3s-artspace-portsmouth-nh-usa.html"
+  },
+  {
+    "number": 22,
     "slug": "little-feat-state-theatre-portland",
     "band": "Little Feat",
     "showTitle": "The Last Farewell Tour",
@@ -815,7 +858,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/little-feat/2026/state-theatre-portland-me-6b752ada.html"
   },
   {
-    "number": 22,
+    "number": 23,
     "slug": "primus-thompsons-point-portland",
     "band": "Primus",
     "venue": "Thompson's Point",
@@ -852,7 +895,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/primus/2026/thompsons-point-portland-me-534a0b09.html"
   },
   {
-    "number": 23,
+    "number": 24,
     "slug": "the-strokes-td-garden-boston",
     "band": "The Strokes",
     "venue": "TD Garden",
@@ -898,7 +941,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/the-strokes/2026/td-garden-boston-ma-7b767690.html"
   },
   {
-    "number": 24,
+    "number": 25,
     "slug": "sqwerv-portland-house-of-music",
     "band": "Sqwerv",
     "venue": "Portland House of Music and Events",
@@ -915,7 +958,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/sqwerv/2026/portland-house-of-music-and-events-portland-me-1b7275b4.html"
   },
   {
-    "number": 25,
+    "number": 26,
     "slug": "goose-leader-bank-pavilion-boston-night-one",
     "band": "Goose",
     "showTitle": "Leader Bank Pavilion, Night One",
@@ -950,7 +993,7 @@
     "setlistNote": "Pulled from the live album track listing rather than a fan-submitted setlist.fm page, so the set/encore breakdown is a best guess."
   },
   {
-    "number": 26,
+    "number": 27,
     "slug": "goose-leader-bank-pavilion-boston-night-two",
     "band": "Goose",
     "showTitle": "Leader Bank Pavilion, Night Two",
@@ -984,7 +1027,7 @@
     "setlistSource": "https://www.boston.com/culture/concert-reviews/2026/07/02/review-setlist-goose-at-leader-bank-pavilion-boston-july-1-2026/"
   },
   {
-    "number": 27,
+    "number": 28,
     "slug": "spafford-3s-artspace-portsmouth",
     "band": "Spafford",
     "showTitle": "Summer Tour 2026",
@@ -1015,7 +1058,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/spafford/2026/3s-artspace-portsmouth-nh-2b73f0da.html"
   },
   {
-    "number": 28,
+    "number": 29,
     "slug": "magoo-jeezum-crow-jay-peak",
     "band": "Magoo",
     "showTitle": "Jeezum Crow Festival",
@@ -1045,7 +1088,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/magoo/2026/stateside-amphitheater-jay-vt-6b737af2.html"
   },
   {
-    "number": 29,
+    "number": 30,
     "slug": "benson-boone-td-garden-boston",
     "band": "Benson Boone",
     "showTitle": "Wanted Man Tour",
@@ -1087,7 +1130,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/benson-boone/2026/td-garden-boston-ma-b76b562.html"
   },
   {
-    "number": 30,
+    "number": 31,
     "slug": "bob-dylan-gilford",
     "band": "Bob Dylan",
     "showTitle": "Long Hot Summer Tour '26",
@@ -1126,7 +1169,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/bob-dylan/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-53766329.html"
   },
   {
-    "number": 31,
+    "number": 32,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -1168,7 +1211,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 32,
+    "number": 33,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -1214,7 +1257,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 33,
+    "number": 34,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -1260,7 +1303,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 34,
+    "number": 35,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -1304,7 +1347,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 35,
+    "number": 36,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -1350,7 +1393,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 36,
+    "number": 37,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
