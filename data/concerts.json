@@ -1,0 +1,113 @@
+[
+  {
+    "number": 1,
+    "slug": "goosemas-xii-night-one-providence",
+    "band": "Goose",
+    "showTitle": "Goosemas XII — Night One",
+    "venue": "Amica Mutual Pavilion",
+    "city": "Providence, RI",
+    "date": "2025-12-12",
+    "photo": "assets/img/concerts/goosemas-night-1.svg",
+    "setlist": {
+      "set1": ["Dramophone (Caravan Palace cover)", "Creatures", "Atlas Dogs", "Red Bird", "Silver Rising", "Bear (The Shouting Matches cover)", "Moby", "Pigs (Three Different Ones) (Pink Floyd cover)", "Animal"],
+      "set2": ["So Ready", "Arrow", "Burn the Witch (Radiohead cover)", "Madhuvan", "Dripfield"],
+      "encore": ["Jed Stone", "Master & a Hound (Gregory Alan Isakov cover)", "Sugar Mountain (Neil Young cover)"]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
+  },
+  {
+    "number": 2,
+    "slug": "goosemas-xii-night-two-providence",
+    "band": "Goose",
+    "showTitle": "Goosemas XII — Night Two",
+    "venue": "Amica Mutual Pavilion",
+    "city": "Providence, RI",
+    "date": "2025-12-13",
+    "photo": "assets/img/concerts/goosemas-night-2.svg",
+    "setlist": {
+      "set1": ["Wild Mountain Thyme (Francis McPeake cover)", "Give It Time", "Flodown", "Echo of a Rose", "Into the Myst", "Strange Overtones (Brian Eno & David Byrne cover)", "Strange Overtonez", "Wysteria Lane", "(dawn)"],
+      "set2": ["Life Is a Carnival (The Band cover)", "Thatch", "Big Modern!", "Hot Tea", "Marb House", "Factory Fiction"],
+      "encore": ["Dramophone (Caravan Palace cover)", "The Empress of Organos", "The Empress of Organos Reprise"]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
+  },
+  {
+    "number": 3,
+    "slug": "billy-strings-agganis-arena-boston",
+    "band": "Billy Strings",
+    "venue": "Agganis Arena",
+    "city": "Boston, MA",
+    "date": "2026-07-21",
+    "photo": "assets/img/concerts/billy-strings-boston.svg",
+    "setlist": {
+      "set1": ["Leaning on a Travelin' Song", "Lumpy, Beanpole & Dirt (Bad Livers cover)", "Sally Goodin (traditional)", "Must Be Seven", "While I'm Waiting Here", "Living Like an Animal", "Half A Heart", "All Fall Down (John Hartford cover)", "Love Like Me", "Out on the Ocean (The Kentuckians cover)", "Sophronie (Jimmy Martin cover)"],
+      "set2": ["Wargasm", "Oh the Wind and Rain (traditional)", "West Dakota Rose (Chris Henry cover)", "Watch It Fall", "Take Me Out to the Ball Game (Harvey Hindermyer cover)", "The Fire on My Tongue", "Ridin' That Midnight Train (The Stanley Brothers cover)", "Freedom", "I Only Exist (The Stanley Brothers cover)", "Richard Petty", "Walk On, Boy (Mel Tillis cover)", "Meet Me at the Creek"],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
+  },
+  {
+    "number": 4,
+    "slug": "billy-strings-portland-night-one",
+    "band": "Billy Strings",
+    "showTitle": "Portland, Night One",
+    "venue": "Cross Insurance Arena",
+    "city": "Portland, ME",
+    "date": "2026-07-24",
+    "photo": "assets/img/concerts/billy-strings-portland-1.svg",
+    "setlist": {
+      "set1": ["Shenandoah Breakdown", "Know It All", "Love Among the Tombstones", "Harbor of Love", "Libby Phillips Rag", "Freeborn Man", "Show Me the Door", "California Sober", "Nothing's Working", "Pyramid Country", "Train, Train"],
+      "set2": ["Fire Line", "Thirst Mutilator", "On and On", "Love Like Me", "Whisper My Name", "Happy Hollow", "Broken Doe", "Long Forgotten Dream", "The Old Mountaineer", "Miss the Mississippi and You", "Wait a Minute", "Katy Daley", "Leaders", "Red Rocking Chair", "Turmoil & Tinfoil"],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
+  },
+  {
+    "number": 5,
+    "slug": "billy-strings-portland-night-two",
+    "band": "Billy Strings",
+    "showTitle": "Portland, Night Two",
+    "venue": "Cross Insurance Arena",
+    "city": "Portland, ME",
+    "date": "2026-07-25",
+    "photo": "assets/img/concerts/billy-strings-portland-2.svg",
+    "setlist": {
+      "set1": ["Gone a Long Time", "Old Train (The Seldom Scene cover)", "Heartbeat of America", "In the Morning Light", "Dusty Miller (traditional)", "New Country Blues (Emmitt-Nershi Band cover)", "My Alice", "Tennessee Stud (Jimmy Driftwood cover)", "Burn the Other End", "Drifting With the Tide (traditional)", "In the Clear", "Just Because (Nelstone's Hawaiians cover)"],
+      "set2": ["I'm One of Those", "Age (Jim Croce cover)", "Seven Weeks in County", "This Old World", "Nashville Pickin' (Doc Watson cover)", "I'm a Natural Born Gamblin' Man (Merle Travis cover)", "Away From the Mire", "Crossing Muddy Waters (John Hiatt cover)", "Hellbender", "Presbyterian Guitar (John Hartford cover)", "Hide and Seek", "And Your Bird Can Sing (The Beatles cover)", "Treasures Untold (Jimmie Rodgers cover)", "We Shall All Be Reunited (Patty Griffin cover)"],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
+  },
+  {
+    "number": 6,
+    "slug": "billy-strings-bethel-woods-night-one",
+    "band": "Billy Strings",
+    "showTitle": "Bethel Woods, Night One",
+    "venue": "Bethel Woods Center for the Arts",
+    "city": "Bethel, NY",
+    "date": "2026-07-31",
+    "photo": "assets/img/concerts/billy-strings-bethel-1.svg",
+    "setlist": {
+      "set1": ["The Fire on My Tongue", "Must Be Seven", "While I'm Waiting Here", "15 Steps (Jeff Austin cover)", "Bronzeback", "Air Mail Special on the Fly (Leon Rusk cover)", "Stratosphere Blues / I Believe in You", "End of the Rainbow (Frank Wakefield cover)", "Dawg's Rag (The David Grisman Quintet cover)", "Mill Town Flood", "On the Line", "Train 45 (traditional)"],
+      "set2": ["Red Daisy", "Don't Be Calling Me (At 4am)", "Seney Stretch", "Crown of Thorns (Mother Love Bone cover)", "Wargasm", "Uncle Pen (Bill Monroe and the Bluegrass Boys cover)", "How Long Have I Been Waiting for You (Jonathan Edwards and The Seldom Scene cover)", "If Your Hair's Too Long (There's Sin in Your Heart) (traditional)", "Richard Petty", "Leaning on a Travelin' Song", "Ashland Breakdown (Bill Monroe cover)", "There Is a Time (The Dillards cover)", "My Love Come Rolling Down (Eric Von Schmidt cover)", "Meet Me at the Creek"],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
+  },
+  {
+    "number": 7,
+    "slug": "billy-strings-bethel-woods-night-two",
+    "band": "Billy Strings",
+    "showTitle": "Bethel Woods, Night Two",
+    "venue": "Bethel Woods Center for the Arts",
+    "city": "Bethel, NY",
+    "date": "2026-08-01",
+    "photo": "assets/img/concerts/billy-strings-bethel-2.svg",
+    "setlist": {
+      "set1": ["Hello City Limits (Harley \"Red\" Allen cover)", "Happy Hollow", "Pyramid Country", "Secrets", "Doin' Things Right", "Everything's the Same", "Arabia (Jerry Garcia & David Grisman cover)"],
+      "set2": ["Rosa Lee McFall (Charlie Monroe cover)", "Night Fishing", "Long Forgotten Dream", "Fire Line", "Ice Bridges", "Make Me a Pallet on the Floor (traditional)", "Love Like Me", "Broken Doe", "Hollow Heart", "Love or Confusion (The Jimi Hendrix Experience cover)", "So Many Miles (Billy Failing cover)", "Nights in White Satin (The Moody Blues cover)", "Turmoil & Tinfoil"],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-5b4a4f58.html"
+  }
+]

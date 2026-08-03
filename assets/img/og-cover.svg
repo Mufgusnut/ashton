@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0620"/>
+      <stop offset="55%" stop-color="#200b3d"/>
+      <stop offset="100%" stop-color="#190a2e"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9d4edd"/>
+      <stop offset="45%" stop-color="#ff2e9e"/>
+      <stop offset="75%" stop-color="#ff8906"/>
+      <stop offset="100%" stop-color="#ffe53b"/>
+    </linearGradient>
+    <linearGradient id="text-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe53b"/>
+      <stop offset="100%" stop-color="#ff2e9e"/>
+    </linearGradient>
+    <clipPath id="sunClip"><circle cx="600" cy="230" r="230"/></clipPath>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g clip-path="url(#sunClip)">
+    <rect x="370" y="0" width="460" height="460" fill="url(#sun)"/>
+    <g stroke="#0f0620" stroke-width="9">
+      <line x1="370" y1="260" x2="830" y2="260"/>
+      <line x1="370" y1="295" x2="830" y2="295"/>
+      <line x1="370" y1="330" x2="830" y2="330"/>
+      <line x1="370" y1="365" x2="830" y2="365"/>
+      <line x1="370" y1="400" x2="830" y2="400"/>
+    </g>
+  </g>
+  <g stroke="#05dfd7" stroke-width="1" opacity="0.3">
+    <line x1="0" y1="460" x2="1200" y2="460"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="0" y1="580" x2="1200" y2="580"/>
+    <line x1="0" y1="620" x2="1200" y2="620"/>
+    <line x1="150" y1="440" x2="0" y2="630"/>
+    <line x1="450" y1="440" x2="380" y2="630"/>
+    <line x1="750" y1="440" x2="820" y2="630"/>
+    <line x1="1050" y1="440" x2="1200" y2="630"/>
+  </g>
+  <text x="600" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="150" fill="url(#text-sun)">40</text>
+  <text x="600" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="52" fill="#fdf4ff">BEFORE 40</text>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="26" fill="#05dfd7" letter-spacing="2">ASHTON'S YEAR OF LIVE MUSIC</text>
+</svg>
