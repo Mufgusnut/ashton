@@ -95,6 +95,13 @@ function head(title, description, prefix) {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:image" content="${prefix}${config.socialImage}">
   <meta property="og:type" content="website">
+  <link rel="icon" href="${prefix}favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="${prefix}favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="${prefix}favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="${prefix}apple-touch-icon.png">
+  <link rel="manifest" href="${prefix}site.webmanifest">
+  <meta name="theme-color" content="#0f0620">
+  <meta name="msapplication-config" content="${prefix}browserconfig.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
