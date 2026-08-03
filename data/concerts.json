@@ -82,6 +82,49 @@
   },
   {
     "number": 3,
+    "slug": "daniel-donatos-cosmic-country-royale-boston",
+    "band": "Daniel Donato's Cosmic Country",
+    "showTitle": "Horizons Fall Tour",
+    "venue": "Royale",
+    "city": "Boston, MA",
+    "date": "2025-09-27",
+    "photo": "assets/img/concerts/daniel-donato-boston.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Foreplay (Boston cover, played from tape)",
+        "Justice",
+        "Jessica (The Allman Brothers Band cover)",
+        "Forgotten Days",
+        "Valhalla",
+        "Fourteen Carat Mind (Gene Watson cover)",
+        "Hi-Country",
+        "Prairie Spin",
+        "Travelin' Light (J.J. Cale cover)",
+        "Prairie Spin (reprise)"
+      ],
+      "set2": [
+        "Sitting on Top of the World (Mississippi Sheiks cover)",
+        "'Till the Daylight",
+        "Darling Corey (traditional cover)",
+        "Arkansas Traveller (traditional cover)",
+        "Lay Low Lucy",
+        "About the Angels",
+        "Translation",
+        "Half Moon Night",
+        "Cosmic Country Gardens",
+        "Sunshine in the Rain (Strange Presence cover)"
+      ],
+      "encore": [
+        "Brain Stew (Green Day cover, live debut)",
+        "The Gold Rush (Bill Monroe cover)"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/daniel-donato/2025/royale-boston-ma-2345a4ab.html"
+  },
+  {
+    "number": 4,
     "slug": "oteil-and-friends-waterville",
     "band": "Oteil & Friends",
     "venue": "Waterville Opera House",
@@ -117,7 +160,107 @@
     "setlistSource": "https://www.setlist.fm/setlist/oteil-and-friends/2025/waterville-opera-house-waterville-me-3341e885.html"
   },
   {
-    "number": 4,
+    "number": 5,
+    "slug": "billy-strings-baltimore-halloween",
+    "band": "Billy Strings",
+    "showTitle": "Meet Me at the Crypt",
+    "venue": "CFG Bank Arena",
+    "city": "Baltimore, MD",
+    "date": "2025-10-31",
+    "photo": "assets/img/concerts/billy-strings-baltimore-1.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Frankenstein (The Edgar Winter Group cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Tombstone Blues (Bob Dylan cover, with Cory Henry and Alwyn Robinson)",
+        "Alive (Pearl Jam cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Red Daisy (with Cory Henry and Alwyn Robinson)",
+        "Taking Water (with Cory Henry and Alwyn Robinson)",
+        "Hide and Seek (with Cory Henry and Alwyn Robinson)",
+        "Fire (The Jimi Hendrix Experience cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Swan Lake Suite (Pyotr Ilyich Tchaikovsky cover, with Charm City Coven)",
+        "The Mummy's Bracelet (Lee Ross cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Arabia (Jerry Garcia & David Grisman cover, with Cory Henry and Alwyn Robinson)",
+        "There Ain't No Grave Gonna Hold My Body Down (Brother Claude Ely cover, with Cory Henry and Alwyn Robinson)",
+        "Way Down in the Hole (Tom Waits cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Mother's Only Sleeping (Bill Monroe cover, with Cory Henry and Alwyn Robinson)",
+        "Adagio in G Minor (Remo Giazotto cover, with Charm City Coven)",
+        "At the Inn"
+      ],
+      "set2": [
+        "Run for Your Life (The Beatles cover, with Cory Henry and Alwyn Robinson)",
+        "The Wreck of the Edmund Fitzgerald (Gordon Lightfoot cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Blood Sucking F(r)iends (Greensky Bluegrass cover, with Cory Henry and Alwyn Robinson)",
+        "Highway Hypnosis (with Cory Henry and Alwyn Robinson)",
+        "War Pigs (Black Sabbath cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Dracula/Wolfman Theme (with Charm City Coven)",
+        "Spring Song (with Charm City Coven and Vince Herman)",
+        "You've Got a Friend in Me (Randy Newman cover, with Cory Henry, Alwyn Robinson, Cris Jacobs, and Charm City Coven)",
+        "Black Magic Woman / Gypsy Queen (Santana cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "L-O-V-E (Bert Kaempfert & His Orchestra cover, with Cory Henry and Alwyn Robinson)",
+        "Dealing Despair (with Cory Henry and Alwyn Robinson)",
+        "Wolfman Theme (with Charm City Coven)",
+        "Home (with Cory Henry, Alwyn Robinson, and Charm City Coven)",
+        "Wolfman's Brother (Phish cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Bitin' List (Tyler Childers cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Li'l Red Riding Hood (Sam the Sham & the Pharaohs cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)",
+        "Bark at the Moon (Ozzy Osbourne cover, with Cory Henry, Alwyn Robinson, and Cris Jacobs)"
+      ],
+      "encore": [
+        "Werewolves of London (Warren Zevon cover, with Cory Henry, Alwyn Robinson, Cris Jacobs, Charm City Coven, Vince Herman, Greg Garrison, Drew Emmitt, Andy Thorn, and Jay Starling)",
+        "Monster Mash (Bobby \"Boris\" Pickett cover, with Cory Henry, Alwyn Robinson, Cris Jacobs, Charm City Coven, Vince Herman, Greg Garrison, Drew Emmitt, Andy Thorn, and Jay Starling)"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/cfg-bank-arena-baltimore-md-63478eeb.html",
+    "setlistNote": "Halloween-themed 'Meet Me at the Crypt' show with a rotating cast of guests throughout — Cory Henry, Alwyn Robinson, Cris Jacobs, and the Charm City Coven strings were on stage most of the night."
+  },
+  {
+    "number": 6,
+    "slug": "billy-strings-baltimore-night-two",
+    "band": "Billy Strings",
+    "venue": "CFG Bank Arena",
+    "city": "Baltimore, MD",
+    "date": "2025-11-01",
+    "photo": "assets/img/concerts/billy-strings-baltimore-2.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "My Alice",
+        "Whisper My Name (New Grass Revival cover)",
+        "Malfunction Junction",
+        "The Fire on My Tongue",
+        "Crossing Muddy Waters (John Hiatt cover)",
+        "Heartbeat of America",
+        "Down in the Hollow (Leftover Salmon cover, with Leftover Salmon)",
+        "Joseph's Dream / Get No Better (John Hartford cover, with Leftover Salmon)",
+        "Home of the Red Fox (Bill Emerson cover)",
+        "Ole Slew-Foot (Johnny Horton cover)"
+      ],
+      "set2": [
+        "Seven Weeks in County",
+        "Ernest T. Grass (The Dillards cover)",
+        "Know It All",
+        "John Deere Tractor (Larry Sparks cover)",
+        "Gild the Lily",
+        "Harbor of Love (The Stanley Brothers cover)",
+        "Dust in a Baggie (Billy Strings & Don Julin song)",
+        "Cold, Cold World (Blaze Foley cover)",
+        "Be Your Man",
+        "Gone a Long Time",
+        "Tennessee Stud (Jimmy Driftwood cover)",
+        "Away From the Mire"
+      ],
+      "encore": [
+        "Running on Empty (Jackson Browne cover, with Cris Jacobs and Cory Henry)",
+        "Back on the Train (Phish cover, with Cris Jacobs and Cory Henry)"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/cfg-bank-arena-baltimore-md-6b478eea.html"
+  },
+  {
+    "number": 7,
     "slug": "billy-strings-prudential-center-newark",
     "band": "Billy Strings",
     "venue": "Prudential Center",
@@ -163,7 +306,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2025/prudential-center-newark-nj-4b478f16.html"
   },
   {
-    "number": 5,
+    "number": 8,
     "slug": "bela-fleck-flecktones-portland",
     "band": "Béla Fleck and the Flecktones",
     "showTitle": "Jingle All the Way",
@@ -207,7 +350,7 @@
     "setlistNote": "No setlist has been documented for this exact show. This is the setlist from the Beacon Theatre, NYC stop of the same Jingle All the Way tour on 12/10/2025 — a close approximation, not necessarily what was played in Portland."
   },
   {
-    "number": 6,
+    "number": 9,
     "slug": "goosemas-xii-night-one-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night One",
@@ -245,7 +388,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-3342d0dd.html"
   },
   {
-    "number": 7,
+    "number": 10,
     "slug": "goosemas-xii-night-two-providence",
     "band": "Goose",
     "showTitle": "Goosemas XII — Night Two",
@@ -284,7 +427,34 @@
     "setlistSource": "https://www.setlist.fm/setlist/goose/2025/amica-mutual-pavilion-providence-ri-2b42d0d2.html"
   },
   {
-    "number": 8,
+    "number": 11,
+    "slug": "eggy-state-theatre-portland",
+    "band": "Eggy",
+    "venue": "State Theatre",
+    "city": "Portland, ME",
+    "date": "2026-01-10",
+    "photo": "assets/img/concerts/eggy-portland.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "Silver Steed (My Blue)",
+        "Burritos El Chavo 2",
+        "Shallow Rivers",
+        "Come Up Slow",
+        "Breaking the Horse",
+        "Rampage",
+        "Cassidy (Grateful Dead cover)"
+      ],
+      "set2": [],
+      "encore": [
+        "One More Saturday Night (Grateful Dead cover, with Alex Bleeker and James Richardson)"
+      ]
+    },
+    "setlistSource": "https://thecarton.net/setlists/eggy-january-10-2026-state-theatre-portland-me-usa.html"
+  },
+  {
+    "number": 12,
     "slug": "pigeons-playing-ping-pong-portland",
     "band": "Pigeons Playing Ping Pong",
     "venue": "State Theatre",
@@ -321,7 +491,79 @@
     "setlistSource": "https://www.setlist.fm/setlist/pigeons-playing-ping-pong/2026/state-theatre-portland-me-7b4cd224.html"
   },
   {
-    "number": 9,
+    "number": 13,
+    "slug": "lady-gaga-td-garden-boston",
+    "band": "Lady Gaga",
+    "showTitle": "The MAYHEM Ball",
+    "venue": "TD Garden",
+    "city": "Boston, MA",
+    "date": "2026-03-29",
+    "photo": "assets/img/concerts/lady-gaga-boston.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [
+        "The Art of Personal Chaos (The Manifesto of MAYHEM) (played from tape)",
+        "Bloody Mary",
+        "Abracadabra",
+        "Judas",
+        "Aura",
+        "Scheiße",
+        "Garden of Eden",
+        "Poker Face",
+        "Abracadabra (Gesaffelstein Remix, played from tape)",
+        "Perfect Celebrity",
+        "Disease",
+        "Paparazzi",
+        "LoveGame",
+        "Alejandro",
+        "The Beast",
+        "Killah",
+        "Zombieboy",
+        "LoveDrug",
+        "Applause",
+        "Just Dance",
+        "Wake Up Her! (played from tape)",
+        "Shadow of a Man",
+        "Kill for Love",
+        "Summerboy",
+        "Born This Way",
+        "Million Reasons",
+        "Shallow (Lady Gaga & Bradley Cooper song)",
+        "Die With a Smile",
+        "How Bad Do U Want Me (acoustic)",
+        "The Edge of Glory (acoustic)",
+        "Vanish Into You",
+        "Bad Romance",
+        "Credits (played from tape)"
+      ],
+      "set2": [],
+      "encore": [
+        "How Bad Do U Want Me",
+        "Sour Candy (played from tape)"
+      ]
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/lady-gaga/2026/td-garden-boston-ma-23400857.html"
+  },
+  {
+    "number": 14,
+    "slug": "shadowgrass-brighton-music-hall-boston",
+    "band": "Shadowgrass",
+    "venue": "Brighton Music Hall",
+    "city": "Boston, MA",
+    "date": "2026-04-16",
+    "photo": "assets/img/concerts/shadowgrass-boston.svg",
+    "photos": [],
+    "guestList": [],
+    "setlist": {
+      "set1": [],
+      "set2": [],
+      "encore": []
+    },
+    "setlistSource": "https://www.setlist.fm/setlist/shadowgrass/2026/brighton-music-hall-boston-ma-334ab859.html"
+  },
+  {
+    "number": 15,
     "slug": "eggy-3s-artspace-portsmouth",
     "band": "Eggy",
     "venue": "3S Artspace",
@@ -357,7 +599,7 @@
     "setlistSource": "https://thecarton.net/setlists/eggy-may-14-2026-3s-artspace-portsmouth-nh-usa.html"
   },
   {
-    "number": 10,
+    "number": 16,
     "slug": "primus-thompsons-point-portland",
     "band": "Primus",
     "venue": "Thompson's Point",
@@ -394,7 +636,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/primus/2026/thompsons-point-portland-me-534a0b09.html"
   },
   {
-    "number": 11,
+    "number": 17,
     "slug": "the-strokes-td-garden-boston",
     "band": "The Strokes",
     "venue": "TD Garden",
@@ -440,7 +682,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/the-strokes/2026/td-garden-boston-ma-7b767690.html"
   },
   {
-    "number": 12,
+    "number": 18,
     "slug": "billy-strings-agganis-arena-boston",
     "band": "Billy Strings",
     "venue": "Agganis Arena",
@@ -482,7 +724,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/agganis-arena-boston-ma-234a5c57.html"
   },
   {
-    "number": 13,
+    "number": 19,
     "slug": "billy-strings-portland-night-one",
     "band": "Billy Strings",
     "showTitle": "Portland, Night One",
@@ -528,7 +770,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-3b4a5c38.html"
   },
   {
-    "number": 14,
+    "number": 20,
     "slug": "billy-strings-portland-night-two",
     "band": "Billy Strings",
     "showTitle": "Portland, Night Two",
@@ -574,7 +816,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/cross-insurance-arena-portland-me-2b4a5c3e.html"
   },
   {
-    "number": 15,
+    "number": 21,
     "slug": "ella-langley-gilford",
     "band": "Ella Langley",
     "venue": "Bank of New Hampshire Pavilion at Meadowbrook",
@@ -618,7 +860,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/ella-langley/2026/bank-of-new-hampshire-pavilion-at-meadowbrook-gilford-nh-334bf865.html"
   },
   {
-    "number": 16,
+    "number": 22,
     "slug": "billy-strings-bethel-woods-night-one",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night One",
@@ -664,7 +906,7 @@
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-434a4b17.html"
   },
   {
-    "number": 17,
+    "number": 23,
     "slug": "billy-strings-bethel-woods-night-two",
     "band": "Billy Strings",
     "showTitle": "Bethel Woods, Night Two",
@@ -702,22 +944,5 @@
       "encore": []
     },
     "setlistSource": "https://www.setlist.fm/setlist/billy-strings/2026/bethel-woods-center-for-the-arts-bethel-ny-5b4a4f58.html"
-  },
-  {
-    "number": 18,
-    "slug": "daniel-donatos-cosmic-country-bourbon-and-beyond",
-    "band": "Daniel Donato's Cosmic Country",
-    "showTitle": "Bourbon & Beyond",
-    "venue": "Bourbon & Beyond Festival",
-    "city": "Louisville, KY",
-    "date": "2026-09-27",
-    "photo": "assets/img/concerts/daniel-donato-louisville.svg",
-    "photos": [],
-    "guestList": [],
-    "setlist": {
-      "set1": [],
-      "set2": [],
-      "encore": []
-    }
   }
 ]
