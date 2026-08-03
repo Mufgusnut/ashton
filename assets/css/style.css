@@ -265,10 +265,12 @@ img { max-width: 100%; display: block; }
 }
 
 .stat-block .substat {
-  margin-top: 4px;
-  font-size: 11px;
-  color: var(--ink-dim);
-  opacity: 0.75;
+  margin-top: 8px;
+  font-family: 'Bungee', Arial, sans-serif;
+  font-size: 36px;
+  color: var(--yellow);
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255, 229, 59, 0.35);
 }
 
 /* progress bar */
